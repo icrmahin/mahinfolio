@@ -1,0 +1,43 @@
+{
+  "name": "theme-icrmahin",
+  "displayName": "icrmahin Minimalist — Theme",
+  "description": "The signature eye-comfortable, warm editorial color theme for VS Code by A. Mahin (icrmahin).",
+  "version": "1.0.0",
+  "publisher": "icrmahin",
+  "author": {
+    "name": "A. Mahin",
+    "email": "icrmahin@gmail.com",
+    "url": "https://github.com/icrmahin"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "minimalist",
+    "warm",
+    "calm",
+    "eye-comfort",
+    "editorial",
+    "periwinkle",
+    "parchment",
+    "dark",
+    "light"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "icrmahin Minimalist Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/icrmahin-dark.json"
+      },
+      {
+        "label": "icrmahin Warm Light",
+        "uiTheme": "vs",
+        "path": "./themes/icrmahin-light.json"
+      }
+    ]
+  }
+}

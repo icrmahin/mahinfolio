@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Albert Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Foundations */
+  --color-dark: #292621;
+  --color-dark-canvas: #201D19;
+  --color-light: #F5EDE2;
+  --color-light-elevated: #FAF5EE;
+
+  /* Surfaces */
+  --color-soft: #EAE1D5;
+  --color-surface-muted: #DFD4C6;
+  --color-surface-dark: #292621;
+  --color-surface-dark-muted: #35312B;
+
+  /* Typography */
+  --color-text-primary: #292621;
+  --color-text-secondary: #666159;
+  --color-muted: #7E7870;
+  --color-text-subtle: #9E978D;
+
+  /* Accents */
+  --color-accent: #7790ED;
+  --color-accent-strong: #435DC9;
+  --color-accent-hover: #647EDD;
+  --color-clay: #C48248;
+  --color-clay-dark: #E09F67;
+
+  /* Semantic Statuses */
+  --color-status-success: #2A7347;
+  --color-status-warning: #9A5B15;
+  --color-status-error: #B3392F;
+  --color-status-info: #435DC9;
+}
+
+:root {
+  --color-bg-primary: #F5EDE2;
+  --color-surface-soft: #EAE1D5;
+  --color-text-primary: #292621;
+  --color-text-secondary: #666159;
+  --color-text-muted: #7E7870;
+  --color-accent: #7790ED;
+  --color-accent-strong: #435DC9;
+  --color-border: rgba(41, 38, 33, 0.10);
+}
+
+body {
+  font-family: "Albert Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #F5EDE2;
+  color: #292621;
+}
+
+/* Custom Minimalist Main Website Scrollbar (Replaces default scrollbar) */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F5EDE2;
+}
+::-webkit-scrollbar-thumb {
+  background: #292621;
+  border-radius: 9999px;
+  border: 1.5px solid #F5EDE2;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #435DC9;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #292621 #F5EDE2;
+}
+
+/* Custom scrollbar for horizontal gallery */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Print Styles for CV and documentation export */
+@media print {
+  header, footer, nav, .fixed.top-14, button {
+    display: none !important;
+  }
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  main {
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+}

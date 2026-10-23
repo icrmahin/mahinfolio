@@ -1,0 +1,693 @@
+# Master Prompt — Build the Complete icrmahin Portfolio
+
+Act as a senior product designer, frontend engineer, creative developer, and technical lead. Your task is to inspect, improve, and complete my existing personal portfolio website for **A. Mahin — `icrmahin`**.
+
+Do not just provide recommendations, a design concept, a checklist, or a plan. Inspect the actual repository, understand what already exists, and implement the changes directly in the project.
+
+The final result must feel like a thoughtfully designed, premium, minimalist personal portfolio—not a generic developer template.
+
+## 1. Project identity
+
+- Professional name: A. Mahin
+- Brand / handle: icrmahin
+- Contact email: icrmahin@gmail.com
+- Positioning: Product Engineer / AI-Native Product Builder
+- Primary purpose: Attract freelance clients, product teams, founders, and hiring opportunities.
+- Core capabilities: Product thinking, brand identity, UI/UX design, frontend engineering, web applications, and mobile applications.
+- Primary platforms: Web and mobile.
+- Main objective: Show that I can take a product idea from concept and design through implementation and delivery.
+
+The website must communicate clarity, technical capability, design judgment, and ownership of real product work.
+
+Do not portray me as an agency, an established company, or an expert in technologies unless the existing project evidence supports those claims.
+
+## 2. First inspect the repository
+
+Before editing anything, inspect:
+
+- Project directory structure and Git status.
+- `package.json` and the existing package manager.
+- Next.js, React, TypeScript, and Tailwind CSS versions.
+- App Router structure and existing page routes.
+- Current global CSS, fonts, color tokens, and theme configuration.
+- Existing components and design system.
+- Installed icon, animation, UI, and utility libraries.
+- All existing project images, screenshots, logos, portraits, documents, and other assets.
+- Existing homepage, project archive, case studies, About, Contact, and 404 pages.
+- Current mobile behavior and animation implementation.
+- Existing lint, type-check, test, and build scripts.
+
+Preserve existing working functionality, project history, useful assets, configuration, and user changes. Back up files before making risky changes.
+
+Do not assume dependencies, routes, assets, features, or project details that have not been verified.
+
+Do not replace the architecture simply because you prefer another approach. Make the smallest coherent set of changes necessary to achieve the requirements.
+
+After inspection, implement the work. Do not stop after reporting your findings.
+
+## 3. Visual direction: minimal, warm, soft, editorial
+
+Reference websites:
+
+- https://muhid.de/
+- https://muhid.de/case-study/pathao-connect
+
+Use these references to understand the restrained visual language, typography, spacing, editorial storytelling, and project presentation. Do not copy their content, assets, or exact layouts.
+
+The desired aesthetic combines minimalist product design, a soft tactile quality, editorial typography, and precise interface details.
+
+The website should feel:
+
+- Minimal rather than empty.
+- Warm rather than sterile.
+- Soft rather than overly rounded.
+- Premium rather than decorative.
+- Technical without looking like a developer dashboard.
+- Editorial without becoming a conventional magazine.
+- Personal without becoming a social-media profile page.
+
+### Avoid
+
+- Generic AI-generated portfolio layouts.
+- Excessive cards and boxed sections.
+- Neon colors, glowing effects, and cyberpunk styling.
+- Unnecessary glassmorphism.
+- Decorative blobs, random floating shapes, and meaningless visual elements.
+- Unnecessary 3D elements.
+- Heavy gradients used merely to make the page look impressive.
+- Excessive rounded corners on every element.
+- Oversized headings that overwhelm the content.
+- Unnecessary section dividers and borders.
+- Excessive animation, parallax, and cursor-follow effects.
+- Repeated components that make every section look identical.
+
+Whitespace, typography, composition, authentic project imagery, and careful alignment should provide most of the visual character.
+
+## 4. Color system
+
+Use these exact initial design tokens and centralize them using the existing Tailwind CSS v4 conventions.
+
+| Token | Value | Purpose |
+|---|---|---|
+| Dark | `#292621` | Primary text and dark surfaces |
+| Accent | `#7790ED` | Restrained periwinkle accent |
+| Light | `#F5EDE2` | Primary light background |
+| Muted | `#827D75` | Secondary text |
+| Soft surface | `#EAE1D5` | Subtle surface contrast |
+| Dark surface | `#35312B` | Dark-theme surfaces where needed |
+| Light border | `rgba(41, 38, 33, 0.12)` | Subtle borders |
+| Dark border | `rgba(245, 237, 226, 0.14)` | Borders on dark surfaces |
+
+The primary website should use the warm light background with dark typography. The dark palette is for intentional dark sections or components, not a reason to turn the entire website into a dark-themed interface.
+
+Use the blue accent sparingly for meaningful emphasis, selected states, links, and interactive details.
+
+Maintain readable contrast. Do not introduce additional accent colors without a concrete design reason.
+
+## 5. Typography and hierarchy
+
+Inspect existing fonts and assets before adding anything.
+
+If the intended fonts are already available, preserve them. Otherwise, choose a coherent typography system that fits the warm, editorial direction.
+
+Use:
+
+- A distinctive but restrained display face for selected headings.
+- A highly readable sans-serif for body text, navigation, metadata, and interface elements.
+- A clear hierarchy between page titles, section headings, paragraphs, captions, labels, and metadata.
+
+Typography must remain readable on narrow mobile screens.
+
+Use appropriate line lengths, line heights, font weights, and fluid sizing. Avoid oversized text without a purpose.
+
+Do not load unnecessary font families or weights. Use the existing font-loading mechanism and avoid layout shifts.
+
+## 6. Website structure
+
+Implement and verify these pages using the existing routing conventions:
+
+1. Homepage.
+2. Work archive.
+3. Individual project case studies.
+4. About page.
+5. Contact page.
+6. Custom 404 page.
+
+Every visible link must lead somewhere meaningful. Do not create fake buttons, placeholder links, empty routes, or unfinished sections disguised as completed work.
+
+### Homepage
+
+The homepage should include:
+
+- Compact, carefully aligned navigation.
+- A concise introduction explaining who I am and what I build.
+- A clear primary action for contacting or hiring me.
+- A secondary action to explore my work.
+- A curated selection of four projects, when four sufficiently verified projects are available.
+- A short, relevant explanation of my product-building approach.
+- A restrained contact section.
+- A simple footer with verified links.
+
+The homepage should communicate my identity and capabilities quickly, then encourage visitors to explore actual project work.
+
+Do not turn the homepage into a lengthy biography or an oversized collection of feature cards.
+
+### Work archive
+
+Provide a dedicated page for browsing projects.
+
+Each project entry should communicate the project name, its purpose, my contribution, its current status where relevant, and a meaningful visual.
+
+Use a layout appropriate to the content. Do not force every project into an identical card.
+
+### About page
+
+Explain my background, product-building approach, relevant skills, and the connection between design and engineering.
+
+Use only verified information. Keep the presentation personal, direct, and credible.
+
+Do not invent employers, degrees, client lists, testimonials, achievements, or years of experience.
+
+### Contact page
+
+Make it straightforward for a potential client or employer to contact me.
+
+Use the verified email `icrmahin@gmail.com`. If the existing project contains a valid booking link, use `https://cal.com/icrmahin`.
+
+Do not create a contact form unless it can actually submit data and handle errors correctly.
+
+## 7. Project selection and factual accuracy
+
+Inspect the actual repository and available project materials to identify the projects that should appear in the portfolio.
+
+Potential projects include:
+
+**Hibbullah Pharmacy:** A pharmacy-related product in Bangladesh involving an Android application, administration, and a showcase website. The known product scope includes product browsing, inventory, and orders, with Supabase involved. Verify the implemented functionality before describing it.
+
+**DigitalPathways:** Inspect the available code, assets, and project documentation to establish its actual purpose, scope, implementation, and my contribution.
+
+**Viyro:** A product direction involving a field-service workflow such as customer, job, quote, invoice, and payment, with Expo/React Native, TypeScript, Supabase, and EAS considered in its stack. Verify the current implementation before presenting these features as delivered.
+
+Select a fourth project only if enough genuine material exists. Otherwise, show fewer projects rather than fabricate one.
+
+For every project, establish whether it is:
+
+- Shipped and publicly available.
+- Implemented but not publicly released.
+- A working prototype.
+- A design concept.
+- A work in progress.
+
+Label the status honestly.
+
+Never invent metrics, revenue, conversion improvements, users, research results, customer quotes, testimonials, project dates, or business outcomes.
+
+## 8. Critical requirement: detailed, substantial case studies
+
+The existing case studies are too short. A title, a short paragraph, and a few screenshots are not enough.
+
+Every major project needs a substantial, evidence-based case study that explains the work and demonstrates my reasoning as a product builder.
+
+Target approximately **1,200–2,000 words per major case study when sufficient verified material exists**. This is a guideline, not permission to add filler. Use the available evidence and clearly disclose gaps.
+
+Do not make every case study a generic copy of the same template. Each project needs its own story, technical details, decisions, constraints, and lessons.
+
+### Required case-study structure
+
+**1. Project introduction**
+
+Explain what the product is, who it serves, the problem it addresses, its status, my role, responsibilities, platform, and verified technology stack.
+
+**2. Background and context**
+
+Explain the situation that led to the project. Describe the real users, business or operational needs, pain points, and constraints supported by the available evidence.
+
+**3. Problem definition**
+
+Explain the central problem and break it into specific challenges. Distinguish verified problems from assumptions.
+
+**4. Goals and requirements**
+
+Describe the product requirements, important workflows, functional needs, limitations, and how success could be evaluated.
+
+**5. Discovery and research**
+
+Document the actual discovery work, evidence, observations, and findings. Do not invent interviews, surveys, usability tests, analytics, or research participants.
+
+If formal research was not performed, explain the approach actually used and identify the assumptions that remain unvalidated.
+
+**6. Information architecture and user flows**
+
+Explain how the product is organized and how users move through important tasks.
+
+Use actual flows, diagrams, or annotated interface visuals where useful.
+
+**7. Exploration and iteration**
+
+Show available wireframes, alternatives, design explorations, or before-and-after comparisons.
+
+Explain what changed and why when supporting evidence exists. Never manufacture a design history.
+
+**8. Important design decisions**
+
+Discuss at least three meaningful decisions when the project supports them.
+
+For each decision, explain:
+
+- The problem being solved.
+- The available options or trade-offs.
+- The selected approach.
+- Why it was selected.
+- How it affects the actual product.
+- What limitations remain.
+
+**9. Visual design system**
+
+Explain the actual typography, colors, spacing, component patterns, visual hierarchy, responsive behavior, and accessibility decisions.
+
+Do not write generic design-system explanations unrelated to the project.
+
+**10. Technical implementation**
+
+Explain the real architecture, technology stack, integrations, data flow, implementation details, technical challenges, and relevant engineering decisions.
+
+Inspect the repository before describing implementation. Do not claim to have implemented or tested code that does not exist.
+
+**11. Final solution**
+
+Show substantial, legible product imagery. Explain what each important screen or workflow does, why it matters, and how it addresses the identified problem.
+
+Screenshots must support the story rather than replace it.
+
+**12. Challenges and trade-offs**
+
+Explain actual difficulties, constraints, compromises, and solutions.
+
+**13. Outcome and validation**
+
+Describe what was actually delivered, implemented, tested, or released. Include verified metrics or feedback when available.
+
+If no measurable results are available, explicitly state what remains unmeasured. Do not manufacture success metrics.
+
+**14. Reflection and next steps**
+
+Describe what I learned, what I would change, and what I would validate or build next.
+
+**15. Next project**
+
+Provide a clear, useful transition to another case study.
+
+### Case-study presentation
+
+Keep the established minimalist aesthetic while making the content substantial.
+
+Use:
+
+- A readable, relatively narrow text column.
+- Generous but controlled vertical spacing.
+- Clear section headings and concise paragraphs.
+- Large screenshots and interface mockups where real assets exist.
+- Captions that explain what each visual demonstrates.
+- Occasional full-width visuals for important moments.
+- Before-and-after comparisons when real source material exists.
+- Diagrams for genuinely complex flows.
+- Compact metadata for role, platform, stack, and status.
+- A table of contents or section navigation when it improves long-page usability.
+- Responsive previous/next project navigation.
+
+Avoid filling the page with decorative cards or repetitive layouts just to make it look longer.
+
+**Acceptance criterion:** A visitor should understand the problem, my contribution, the reasoning behind important decisions, the real solution, its implementation, and its limitations without needing to guess.
+
+## 9. Real assets and project imagery
+
+Search the repository for actual project screenshots, interface captures, logos, illustrations, photographs, and supporting documents.
+
+Use authentic assets whenever possible.
+
+Potential personal assets to check:
+
+- `public/A.Mahin.png`
+- `/assets/resume/icrmahin.pdf`
+
+These are candidate paths, not guaranteed files. Verify their existence before using them.
+
+If authentic imagery is missing, do not fabricate screenshots of completed software. Use an honest visual treatment based on verified available materials, or clearly labeled conceptual illustrations when appropriate.
+
+Optimize image sizes and aspect ratios. Keep important interface details legible, particularly on mobile.
+
+## 10. Phosphor icons
+
+Use **`@phosphor-icons/react`** for interface icons.
+
+First inspect the installed dependencies and existing icon implementation. Install the package using the project's existing package manager only if needed.
+
+Documentation: https://github.com/phosphor-icons/react
+
+Requirements:
+
+- Prefer the `regular` weight for ordinary interface icons.
+- Use `light` selectively where it fits the visual system.
+- Use `fill` for active or selected states where appropriate.
+- Keep icon sizes, stroke appearance, alignment, and spacing consistent.
+- Use icons sparingly and only when they improve recognition or usability.
+- Use explicit named imports rather than importing the entire icon namespace.
+- Add accessible labels to icon-only controls.
+- Preserve accessible names and focus states.
+- Follow the package's documented React Server Component and client-component usage.
+- Avoid unnecessary client-side dependencies in server-rendered pages.
+- Do not mix Phosphor with Lucide, Font Awesome, emoji icons, and arbitrary icon libraries without a documented technical reason.
+
+Do not replace meaningful text with ambiguous icons.
+
+## 11. Critical requirement: noticeable GSAP motion
+
+The website must not feel completely static. The current browser experience lacks noticeable motion and a sense of fluidity.
+
+Implement a coherent motion system using GSAP, while preserving the minimalist design.
+
+First inspect the installed dependencies and current animation implementation. Reuse a compatible existing setup when possible. Install `gsap` and `@gsap/react` only if needed.
+
+Official documentation:
+
+- GSAP: https://gsap.com/docs/v3/
+- ScrollTrigger: https://gsap.com/docs/v3/Plugins/ScrollTrigger/
+- Responsive animation setup: https://gsap.com/docs/v3/GSAP/gsap.matchMedia%28%29/
+
+Do not install paid plugins or assume access to them.
+
+### Motion requirements
+
+**Initial entrance**
+
+Create a coordinated entrance for the navigation, hero heading, supporting text, and primary actions. Use an intentional sequence with appropriate stagger and easing. Keep the site interactive immediately and avoid lengthy intro screens.
+
+**Typography**
+
+Use restrained text reveals, line masks, or staggered entrances where they genuinely improve the composition.
+
+**Scroll-based storytelling**
+
+Reveal selected headings, project images, and case-study sections as they enter the viewport. Use ScrollTrigger where appropriate.
+
+**Project interactions**
+
+Provide noticeable but restrained hover, focus, and press feedback for project links, buttons, images, and navigation.
+
+**Case studies**
+
+Use selective image reveals, coordinated sequences, or scroll-linked storytelling when they clarify the narrative.
+
+**Navigation**
+
+Provide responsive feedback for active states and menu interactions. Page transitions are optional and must not break Next.js routing, browser history, focus management, or reduced-motion behavior.
+
+### Timing guidelines
+
+Use these as initial values, not rigid rules:
+
+- Small interaction feedback: 150–250 ms.
+- Standard entrance animations: 400–700 ms.
+- Complete coordinated hero sequence: approximately 600–1,000 ms.
+- Stagger between related elements: approximately 40–100 ms.
+
+Use deliberate easing, sequencing, and timing. Do not apply the same fade-and-slide animation to every element.
+
+The motion must be perceptible during actual browsing. Do not merely install GSAP or create animation utilities that are never used.
+
+### Engineering requirements
+
+- Use GSAP timelines for coordinated sequences.
+- Use ScrollTrigger only where scroll-based behavior improves the experience.
+- Use `gsap.matchMedia()` or the supported responsive animation approach for different viewport sizes.
+- Use `useGSAP()` where appropriate for React integration and cleanup.
+- Register required plugins correctly.
+- Clean up timelines, event listeners, and ScrollTriggers.
+- Prevent duplicate triggers during development, route changes, or remounting.
+- Ensure refreshes and resizing do not leave elements in broken positions.
+- Avoid unnecessary React state updates on animation frames.
+- Avoid repeated layout calculations and expensive scroll handlers.
+- Keep content visible when JavaScript is unavailable or animations fail.
+
+Do not add continuous cursor-follow effects, aggressive parallax, unnecessary pinned sections, or a smooth-scrolling library simply to make the site appear advanced.
+
+Prefer native browser scrolling unless there is a demonstrated need for an alternative.
+
+Respect `prefers-reduced-motion`. Reduce or disable nonessential movement for users who request it.
+
+## 12. Critical requirement: mobile-first responsive design
+
+**Mobile quality is a primary acceptance requirement. A good desktop design is not sufficient.**
+
+Do not simply shrink the desktop layout. Design for narrow screens first, then progressively enhance the layout for larger displays.
+
+Use mobile-first Tailwind CSS responsive utilities and let content determine appropriate breakpoints.
+
+### Required viewport checks
+
+Test at these viewport widths:
+
+- 320px — narrow phone.
+- 360px — compact Android phone.
+- 390px — common modern phone.
+- 430px — larger phone.
+- 768px — tablet.
+- 1024px — smaller laptop.
+- 1440px and above — desktop.
+
+These are test points, not a replacement for checking intermediate widths.
+
+### Mobile navigation
+
+- Use a compact navigation that matches the visual identity.
+- Ensure the brand and primary actions remain accessible.
+- Implement a proper mobile menu if required.
+- Ensure the menu opens, closes, supports keyboard use, exposes its accessible state, and does not obstruct content unnecessarily.
+- Avoid clipped labels, overlapping items, tiny targets, and hover-only interactions.
+- Keep Work, About, and Contact easy to access.
+
+### Mobile typography and layout
+
+- Use fluid typography and `clamp()` where appropriate.
+- Prevent heading overflow and awkward wrapping.
+- Maintain comfortable body-text sizing, line height, and contrast.
+- Keep paragraphs readable with appropriate line lengths.
+- Avoid excessive empty space that pushes meaningful content too far down.
+- Preserve the warm, editorial visual hierarchy.
+
+### Project imagery and grids
+
+- Use one-column layouts when they provide better readability.
+- Use two columns only when the content remains legible.
+- Recompose desktop-specific layouts for mobile rather than squeezing them into narrow widths.
+- Adjust image crops, aspect ratios, and object positioning intentionally.
+- Avoid tiny screenshots, clipped mockups, and illegible interface details.
+- Optimize responsive image delivery and do not load unnecessarily large desktop assets on mobile.
+
+### Detailed case studies on mobile
+
+Do not shorten the case-study content merely to make it fit on mobile.
+
+Instead:
+
+- Present content in a readable vertical sequence.
+- Keep headings, paragraphs, captions, metadata, and images appropriately sized.
+- Recompose wide diagrams and comparisons.
+- Replace wide tables with mobile-friendly layouts when necessary.
+- Make section navigation and previous/next project links easy to operate.
+- Prevent horizontal page scrolling caused by overflowing content.
+- Preserve the full narrative and technical detail.
+
+### Touch interactions
+
+- Aim for touch targets of at least 44 × 44 CSS pixels for primary interactive controls.
+- Maintain adequate spacing between adjacent targets.
+- Provide tap feedback instead of relying on hover.
+- Avoid sticky or fixed elements that unnecessarily reduce the available viewport.
+- Keep forms and menus accessible and usable with touch and keyboard input.
+
+### Mobile motion and performance
+
+- Use lightweight, responsive animation behavior.
+- Simplify pinned, scrubbed, and parallax sequences when they harm mobile usability.
+- Never block scrolling while an animation runs.
+- Prevent layout shifts as images and fonts load.
+- Avoid unnecessary JavaScript, heavy autoplay media, and expensive decorative effects.
+- Lazy-load appropriate below-the-fold images, but do not lazy-load the main image responsible for the initial visible content.
+- Respect reduced-motion preferences.
+
+The website must feel responsive on a real mid-range Android phone and variable mobile connections.
+
+## 13. Clean code and architecture
+
+Write production-quality code that is understandable, maintainable, accessible, and consistent with the existing repository.
+
+### Components
+
+- Keep components focused on a clear responsibility.
+- Use reusable components where they eliminate genuine duplication.
+- Avoid giant page components, unnecessary abstractions, and over-engineered architecture.
+- Keep page-specific composition separate from reusable presentation elements where useful.
+- Prefer React Server Components by default in Next.js App Router.
+- Use Client Components only when interactivity, browser APIs, state, or animation requires them.
+- Avoid turning the entire application into a Client Component unnecessarily.
+
+### TypeScript
+
+- Use meaningful, explicit types for project data, component props, and function contracts.
+- Avoid `any`, unjustified type assertions, and duplicated type definitions.
+- Use discriminated unions or structured data models when they genuinely improve correctness.
+- Handle optional data and error states safely.
+
+### Styling
+
+- Follow the installed Tailwind CSS v4 conventions.
+- Centralize colors, typography, spacing, and other shared design tokens.
+- Avoid duplicate CSS, contradictory utility classes, and scattered hard-coded values.
+- Use custom CSS only when it is justified by the design or technical requirements.
+- Avoid inline styles unless needed for dynamic values or animation integration.
+
+### Code hygiene
+
+- Use clear names for components, variables, functions, and files.
+- Remove unused imports, dead code, abandoned components, and obsolete styling when safe.
+- Keep comments concise and limited to non-obvious decisions.
+- Avoid unnecessary dependencies.
+- Follow the existing formatting, linting, and project conventions.
+- Avoid adding a library when an existing dependency or native browser feature already solves the problem.
+
+### Accessibility
+
+- Use semantic HTML.
+- Maintain keyboard navigation and visible focus indicators.
+- Provide meaningful image alt text.
+- Label form fields and icon-only controls.
+- Ensure sufficient color contrast.
+- Support reduced motion.
+- Do not use color as the only indicator of state.
+- Keep interactive elements usable with keyboard, touch, and assistive technologies.
+
+## 14. Technical and runtime quality
+
+Inspect and preserve the actual Next.js, React, TypeScript, and Tailwind configuration.
+
+Do not upgrade frameworks, replace routing, rewrite configuration, or add dependencies without a concrete need.
+
+Verify:
+
+- No broken routes or imports.
+- No missing assets.
+- No TypeScript errors.
+- No lint errors where linting is configured.
+- No hydration errors.
+- No invalid nested interactive elements.
+- No obvious console errors.
+- No broken animation cleanup.
+- No unintended horizontal overflow.
+- No permanently invisible content.
+- No dead links or fake actions.
+- No broken responsive navigation.
+- No avoidable layout shifts.
+- No project details or results fabricated to fill content gaps.
+
+Preserve existing integrations and working behavior.
+
+## 15. Actual browser verification
+
+**Do not consider the task complete merely because the code has been written or the build succeeds.**
+
+Run the actual website using the available local development environment and inspect the rendered result.
+
+Verify the following:
+
+### Homepage
+- The visual hierarchy matches the intended minimalist direction.
+- The hero entrance is noticeable but not slow.
+- Project links work.
+- Project imagery is legible.
+- Scrolling and interactions feel fluid.
+
+### Case studies
+- Every project link opens the correct detailed page.
+- The content is genuinely substantial and project-specific.
+- Real screenshots are used appropriately.
+- The page is readable on mobile.
+- The narrative includes actual design and implementation reasoning.
+- No unsupported claims or fabricated metrics remain.
+
+### Navigation and routes
+- Work, About, and Contact work correctly.
+- Browser back and forward work.
+- Any page transitions preserve normal navigation behavior.
+- The 404 page works.
+
+### Responsive behavior
+- Inspect all listed viewport sizes where browser tools permit.
+- Check for overflow, clipped content, awkward typography, poor image crops, and overlapping elements.
+- Verify mobile menu and touch interactions.
+- Test at least one complete case study on a narrow screen.
+
+### Motion
+- Confirm the actual animations run in the browser.
+- Check that ScrollTrigger effects activate correctly.
+- Verify responsive behavior and cleanup.
+- Confirm reduced-motion behavior.
+- Check that animations do not make scrolling sluggish.
+
+### Automated checks
+
+Use the scripts actually available in the repository for formatting, linting, type-checking, tests, and production build.
+
+Do not invent script names or claim a check passed without executing it.
+
+If browser automation, a physical phone, or other testing tools are unavailable, state the limitation honestly and distinguish automated verification from manual visual inspection.
+
+## 16. Final implementation report
+
+After making the changes, provide a concise report containing:
+
+1. What was changed.
+2. Which files were modified and why.
+3. Which pages and case studies were implemented or improved.
+4. How Phosphor icons are used.
+5. What GSAP interactions were implemented.
+6. What changed for mobile responsiveness.
+7. Which real project assets were reused.
+8. Tests executed and their actual results.
+9. Any remaining problems, missing project evidence, or manual steps.
+
+Do not claim that every requirement is complete if something remains unimplemented or untested.
+
+## 17. Execution rules
+
+Follow this sequence:
+
+1. Inspect the repository and current implementation.
+2. Identify the existing design, architecture, assets, and problems.
+3. Implement the visual system and page structure.
+4. Expand the real case-study content.
+5. Implement the icon system and noticeable, restrained motion.
+6. Improve every page for mobile-first responsiveness.
+7. Clean up the code and preserve existing functionality.
+8. Run available checks.
+9. Inspect the rendered website and fix issues found.
+10. Report the actual results and remaining limitations.
+
+Do not stop after step one or return only a plan. Continue into implementation.
+
+Do not rewrite unrelated application functionality. Do not publish, deploy, or make external changes without authorization.
+
+### Final quality standard
+
+The finished portfolio should feel like a carefully art-directed, technically sound personal website with substantial real project stories, authentic product visuals, deliberate and noticeable motion, and a genuinely excellent mobile experience.
+
+**Prioritize, in order:**
+1. Correctness and preservation of existing functionality.
+2. Mobile usability and readability.
+3. Substantial, evidence-based case studies.
+4. Clear visual hierarchy and minimalist design quality.
+5. Noticeable, polished motion.
+6. Performance, accessibility, and maintainable code.
+7. Desktop refinement and final details.
+
+Build the real product. Verify it in the browser wherever possible. Be precise about what has and has not been completed.
