@@ -67,20 +67,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStu
             className="text-left font-semibold text-base sm:text-lg text-[#292621] group-hover:text-[#435DC9] active:text-[#435DC9] transition-colors inline-flex items-center gap-1.5 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#435DC9] rounded min-h-[32px]"
           >
             <span>{project.title}</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#827D75] group-hover:text-[#435DC9] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-text-secondary group-hover:text-[#435DC9] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </button>
 
-          <span className="text-xs text-[#827D75] font-mono tabular-nums shrink-0">
+          <span className="text-xs text-text-secondary font-mono tabular-nums shrink-0">
             {project.year}
           </span>
         </div>
 
-        <p className="text-xs sm:text-sm text-[#827D75] leading-relaxed">
+        <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
           {project.tagline}
         </p>
 
         {/* Clean unboxed metadata with dot separators */}
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 pt-1 text-xs text-[#827D75]/90">
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-0.5 pt-1 text-xs text-text-secondary">
           <span>{project.role}</span>
           <span aria-hidden="true" className="text-[#292621]/20">·</span>
           <span>{project.category}</span>

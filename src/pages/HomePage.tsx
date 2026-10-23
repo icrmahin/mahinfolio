@@ -150,7 +150,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* Section A & B: Compact Introduction & Social Links */}
       <section className="space-y-5 pt-3 sm:pt-12">
         <div className="space-y-2.5">
-          <div className="gsap-hero-badge flex items-center gap-2 text-xs text-[#827D75]">
+          <div className="gsap-hero-badge flex items-center gap-2 text-xs text-text-secondary">
             <span className="font-semibold text-[#292621]">{PERSONAL_INFO.name}</span>
             <span aria-hidden="true">·</span>
             <span>{PERSONAL_INFO.role}</span>
@@ -162,23 +162,23 @@ export const HomePage: React.FC<HomePageProps> = ({
             </h1>
           </div>
 
-          <p className="gsap-hero-bio text-sm sm:text-base text-[#827D75] leading-relaxed max-w-[580px]">
+          <p className="gsap-hero-bio text-sm sm:text-base text-text-secondary leading-relaxed max-w-[580px]">
             {PERSONAL_INFO.bio}
           </p>
         </div>
 
         {/* Small social / profile links (touch-friendly targets on mobile) */}
-        <div className="gsap-hero-links flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-[#827D75] pt-1">
+        <div className="gsap-hero-links flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-text-secondary pt-1">
           {PERSONAL_INFO.socials.map((social) => (
             <a
               key={social.label}
               href={social.url}
               target={social.url.startsWith('mailto:') ? '_self' : '_blank'}
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 hover:text-[#292621] active:text-[#7790ED] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7790ED] rounded py-1.5 min-h-[38px]"
+              className="inline-flex items-center gap-1 hover:text-[#292621] active:text-[#435DC9] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7790ED] rounded py-1.5 min-h-[38px]"
             >
               <span>{social.label}</span>
-              <ArrowUpRight className="w-3.5 h-3.5 text-[#827D75]" />
+              <ArrowUpRight className="w-3.5 h-3.5 text-text-secondary" />
             </a>
           ))}
           <span className="text-[#292621]/20 hidden sm:inline">·</span>
@@ -197,12 +197,12 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* Section C: Selected Work */}
       <section className="space-y-6 sm:space-y-8">
         <div className="gsap-section-header flex items-baseline justify-between border-b border-[#292621]/10 pb-3">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             Selected Work
           </h2>
           <button
             onClick={() => onNavigate('archive')}
-            className="text-xs text-[#827D75] hover:text-[#292621] active:text-[#7790ED] inline-flex items-center gap-1 transition-colors group min-h-[36px] py-1"
+            className="text-xs text-text-secondary hover:text-[#292621] active:text-[#435DC9] inline-flex items-center gap-1 transition-colors group min-h-[36px] py-1"
           >
             <span>View archive</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -227,7 +227,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* Section E: About Preview */}
       <section className="space-y-5 border-t border-[#292621]/10 pt-12 sm:pt-16">
-        <h2 className="gsap-section-header text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+        <h2 className="gsap-section-header text-xs uppercase font-semibold tracking-wider text-text-secondary">
           About
         </h2>
 
@@ -242,7 +242,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             />
           </div>
 
-          <div className="space-y-2.5 flex-1 text-sm text-[#827D75] leading-relaxed">
+          <div className="space-y-2.5 flex-1 text-sm text-text-secondary leading-relaxed">
             <p className="text-[#292621] font-medium">
               Bridging product strategy, interface design, and full-stack software.
             </p>
@@ -254,7 +254,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div>
               <button
                 onClick={() => onNavigate('about')}
-                className="inline-flex items-center gap-1.5 text-xs text-[#292621] font-medium hover:text-[#7790ED] active:text-[#7790ED] transition-colors group mt-1 min-h-[44px] py-2"
+                className="inline-flex items-center gap-1.5 text-xs text-[#292621] font-medium hover:text-[#435DC9] active:text-[#435DC9] transition-colors group mt-1 min-h-[44px] py-2"
               >
                 <span>Read more about my background</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5" />
@@ -267,10 +267,10 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* Section F: Work Experience or Background */}
       <section className="space-y-5 border-t border-[#292621]/10 pt-12 sm:pt-16">
         <div className="gsap-section-header flex items-baseline justify-between">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             Experience & Background
           </h2>
-          <span className="text-xs text-[#827D75] font-mono">2022 — Present</span>
+          <span className="text-xs text-text-secondary font-mono">2022 — Present</span>
         </div>
 
         <div className="space-y-5 sm:space-y-6">
@@ -278,10 +278,10 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div key={idx} className="space-y-1">
               <div className="flex flex-col sm:flex-row sm:items-baseline justify-between text-xs gap-0.5">
                 <span className="font-semibold text-sm text-[#292621]">{item.role}</span>
-                <span className="text-[#827D75] font-mono tabular-nums">{item.period}</span>
+                <span className="text-text-secondary font-mono tabular-nums">{item.period}</span>
               </div>
-              <div className="text-xs text-[#827D75]">{item.company}</div>
-              <p className="text-xs sm:text-sm text-[#827D75] leading-relaxed pt-0.5">
+              <div className="text-xs text-text-secondary">{item.company}</div>
+              <p className="text-xs sm:text-sm text-text-secondary leading-relaxed pt-0.5">
                 {item.description}
               </p>
             </div>
@@ -291,7 +291,7 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* Section G: Contact */}
       <section id="contact-section" className="space-y-5 border-t border-[#292621]/10 pt-12 sm:pt-16 pb-8">
-        <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+        <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
           Get in Touch
         </h2>
 
@@ -300,7 +300,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             Available for select product engineering, UI/UX architecture, and freelance collaborations.
           </p>
 
-          <p className="text-xs sm:text-sm text-[#827D75] leading-relaxed">
+          <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
             Whether you are launching an early-stage venture, refining a mobile workflow, or rebuilding an operational tool, feel free to reach out.
           </p>
 
@@ -329,7 +329,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 onClick={onOpenResume}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded border border-[#292621]/15 text-[#292621] text-xs font-medium hover:bg-[#EAE1D5] active:scale-[0.98] transition-all min-h-[44px]"
               >
-                <FileText className="w-4 h-4 text-[#827D75]" />
+                <FileText className="w-4 h-4 text-text-secondary" />
                 <span>View Resume</span>
               </button>
             </MagneticButton>

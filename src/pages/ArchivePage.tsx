@@ -37,7 +37,7 @@ export const ArchivePage: React.FC<ArchivePageProps> = ({ onNavigate }) => {
       <div>
         <button
           onClick={() => onNavigate('home')}
-          className="inline-flex items-center gap-1.5 text-xs text-[#827D75] hover:text-[#292621] active:text-[#7790ED] transition-colors group px-2 py-2 -ml-2 rounded min-h-[44px]"
+          className="inline-flex items-center gap-1.5 text-xs text-text-secondary hover:text-[#292621] active:text-[#435DC9] transition-colors group px-2 py-2 -ml-2 rounded min-h-[44px]"
         >
           <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
           <span>Back to Work</span>
@@ -48,7 +48,7 @@ export const ArchivePage: React.FC<ArchivePageProps> = ({ onNavigate }) => {
         <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight text-[#292621]">
           Project Archive
         </h1>
-        <p className="text-xs sm:text-sm text-[#827D75] leading-relaxed">
+        <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
           A catalog of digital products, operational systems, and interfaces built by A. Mahin.
         </p>
 
@@ -59,7 +59,7 @@ export const ArchivePage: React.FC<ArchivePageProps> = ({ onNavigate }) => {
             className={`px-3 py-1.5 text-xs rounded transition-colors min-h-[38px] flex items-center ${
               filter === 'all'
                 ? 'bg-[#292621] text-[#F5EDE2] font-medium'
-                : 'text-[#827D75] hover:text-[#292621] active:bg-[#EAE1D5] bg-[#EAE1D5]/60'
+                : 'text-text-secondary hover:text-[#292621] active:bg-[#EAE1D5] bg-[#EAE1D5]/60'
             }`}
           >
             All Work
@@ -69,7 +69,7 @@ export const ArchivePage: React.FC<ArchivePageProps> = ({ onNavigate }) => {
             className={`px-3 py-1.5 text-xs rounded transition-colors min-h-[38px] flex items-center ${
               filter === 'mobile'
                 ? 'bg-[#292621] text-[#F5EDE2] font-medium'
-                : 'text-[#827D75] hover:text-[#292621] active:bg-[#EAE1D5] bg-[#EAE1D5]/60'
+                : 'text-text-secondary hover:text-[#292621] active:bg-[#EAE1D5] bg-[#EAE1D5]/60'
             }`}
           >
             Mobile & Operations
@@ -79,7 +79,7 @@ export const ArchivePage: React.FC<ArchivePageProps> = ({ onNavigate }) => {
             className={`px-3 py-1.5 text-xs rounded transition-colors min-h-[38px] flex items-center ${
               filter === 'web'
                 ? 'bg-[#292621] text-[#F5EDE2] font-medium'
-                : 'text-[#827D75] hover:text-[#292621] active:bg-[#EAE1D5] bg-[#EAE1D5]/60'
+                : 'text-text-secondary hover:text-[#292621] active:bg-[#EAE1D5] bg-[#EAE1D5]/60'
             }`}
           >
             Web Systems
@@ -116,18 +116,18 @@ export const ArchivePage: React.FC<ArchivePageProps> = ({ onNavigate }) => {
               </div>
               <div className="space-y-0.5 flex-1 min-w-0">
                 <div className="flex items-baseline justify-between sm:justify-start gap-2">
-                  <h2 className="text-sm font-semibold text-[#292621] group-hover:text-[#7790ED] active:text-[#7790ED] transition-colors inline-flex items-center gap-1 truncate">
+                  <h2 className="text-sm font-semibold text-[#292621] group-hover:text-[#435DC9] active:text-[#435DC9] transition-colors inline-flex items-center gap-1 truncate">
                     <span>{project.title}</span>
-                    <ArrowUpRight className="w-3.5 h-3.5 text-[#827D75] group-hover:text-[#7790ED] shrink-0" />
+                    <ArrowUpRight className="w-3.5 h-3.5 text-text-secondary group-hover:text-[#435DC9] shrink-0" />
                   </h2>
-                  <span className="sm:hidden text-xs text-[#827D75] font-mono tabular-nums shrink-0">
+                  <span className="sm:hidden text-xs text-text-secondary font-mono tabular-nums shrink-0">
                     {project.year}
                   </span>
                 </div>
-                <p className="text-xs text-[#827D75] line-clamp-1">
+                <p className="text-xs text-text-secondary line-clamp-1">
                   {project.tagline}
                 </p>
-                <div className="flex items-center gap-1.5 text-[11px] text-[#827D75] truncate">
+                <div className="flex items-center gap-1.5 text-[11px] text-text-secondary truncate">
                   <span className="truncate">{project.role}</span>
                   <span aria-hidden="true">·</span>
                   <span className="font-mono text-[#292621]/70">{project.category}</span>
@@ -136,7 +136,7 @@ export const ArchivePage: React.FC<ArchivePageProps> = ({ onNavigate }) => {
             </div>
 
             <div className="hidden sm:block text-right shrink-0">
-              <span className="text-xs text-[#827D75] font-mono tabular-nums">
+              <span className="text-xs text-text-secondary font-mono tabular-nums">
                 {project.year}
               </span>
             </div>

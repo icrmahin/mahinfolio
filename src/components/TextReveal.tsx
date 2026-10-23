@@ -26,7 +26,7 @@ export const TextReveal: React.FC<TextRevealProps> = ({
 
     const el = containerRef.current;
     
-    gsap.fromTo(
+    const tween = gsap.fromTo(
       el,
       {
         opacity: 0,
@@ -43,6 +43,10 @@ export const TextReveal: React.FC<TextRevealProps> = ({
         clearProps: 'clipPath,transform',
       }
     );
+
+    return () => {
+      tween.revert();
+    };
   }, [delay]);
 
   return React.createElement(

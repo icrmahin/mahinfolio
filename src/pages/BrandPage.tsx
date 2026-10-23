@@ -59,7 +59,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
 
       {/* Main Title & Philosophy */}
       <header className="space-y-3.5">
-        <div className="flex items-center gap-2 text-xs font-mono text-[#7E7870]">
+        <div className="flex items-center gap-2 text-xs font-mono text-text-secondary">
           <span className="font-semibold text-[#292621]">icrmahin design system</span>
           <span aria-hidden="true">·</span>
           <span>Version 1.0</span>
@@ -114,10 +114,10 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
       {/* Section 1: Palette Evaluation & Variations Studied */}
       <section className="space-y-4 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="flex items-baseline justify-between">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#7E7870]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             01. Palette Evaluation & Rationale
           </h2>
-          <span className="text-xs font-mono text-[#7E7870]">Selection Audit</span>
+          <span className="text-xs font-mono text-text-secondary">Selection Audit</span>
         </div>
 
         <p className="text-xs sm:text-sm text-[#666159] leading-relaxed">
@@ -151,7 +151,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
               <span className="w-3.5 h-3.5 rounded-full bg-[#2563EB]" />
             </div>
             <h3 className="font-semibold text-[#292621] text-sm">Clinical Cool Gray</h3>
-            <p className="text-[#7E7870] leading-relaxed">
+            <p className="text-text-secondary leading-relaxed">
               Sterile blue-gray tone commonly used by generic SaaS templates. Evaluated as too corporate and lacking warmth and craft.
             </p>
           </div>
@@ -164,7 +164,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
               <span className="w-3.5 h-3.5 rounded-full bg-[#555555]" />
             </div>
             <h3 className="font-semibold text-[#292621] text-sm">Harsh Pure Monochrome</h3>
-            <p className="text-[#7E7870] leading-relaxed">
+            <p className="text-text-secondary leading-relaxed">
               High-frequency #FFF on #000 causes severe visual fatigue after 45 minutes of reading code or editorial case studies.
             </p>
           </div>
@@ -175,7 +175,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
       <section className="space-y-4 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
-            <h2 className="text-xs uppercase font-semibold tracking-wider text-[#7E7870]">
+            <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
               02. Interactive UI Component Testbed
             </h2>
             <p className="text-xs text-[#666159] mt-0.5">
@@ -265,7 +265,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                 className={`px-4 py-2 rounded-lg text-xs font-medium border transition-all ${
                   activeTheme === 'light'
                     ? 'border-[#435DC9] text-[#435DC9] hover:bg-[#7790ED]/10'
-                    : 'border-[#7790ED] text-[#7790ED] hover:bg-[#7790ED]/15'
+                    : 'border-[#7790ED] text-[#435DC9] hover:bg-[#7790ED]/15'
                 }`}
               >
                 Signature Periwinkle Action
@@ -318,7 +318,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
               <div className={`p-2.5 rounded-lg border flex items-center gap-2 ${
                 activeTheme === 'light'
                   ? 'bg-[#435DC9]/8 border-[#435DC9]/20 text-[#435DC9]'
-                  : 'bg-[#7790ED]/12 border-[#7790ED]/25 text-[#7790ED]'
+                  : 'bg-[#7790ED]/12 border-[#7790ED]/25 text-[#435DC9]'
               }`}>
                 <Info className="w-4 h-4 shrink-0" />
                 <span className="font-medium">Info / Architecture</span>
@@ -356,10 +356,10 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
       {/* Section 3: WCAG AA/AAA Verified Contrast Matrix */}
       <section className="space-y-4 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="flex items-baseline justify-between">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#7E7870]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             03. Verified Contrast & Accessibility Matrix
           </h2>
-          <span className="text-xs font-mono text-emerald-800 flex items-center gap-1">
+          <span className="text-xs font-mono text-[#435DC9] flex items-center gap-1">
             <ShieldCheck className="w-3.5 h-3.5" /> WCAG AA / AAA
           </span>
         </div>
@@ -388,7 +388,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                 <td className="py-2.5 px-3 font-mono text-[11px]">#F5EDE2 (Parchment)</td>
                 <td className="py-2.5 px-3 font-mono font-semibold">12.6 : 1</td>
                 <td className="py-2.5 px-3">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#FAF5EE] text-[#435DC9]">
                     WCAG AAA
                   </span>
                 </td>
@@ -402,7 +402,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                 <td className="py-2.5 px-3 font-mono text-[11px]">#F5EDE2 (Parchment)</td>
                 <td className="py-2.5 px-3 font-mono font-semibold">5.4 : 1</td>
                 <td className="py-2.5 px-3">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#FAF5EE] text-[#435DC9]">
                     WCAG AA
                   </span>
                 </td>
@@ -416,7 +416,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                 <td className="py-2.5 px-3 font-mono text-[11px]">#F5EDE2 (Parchment)</td>
                 <td className="py-2.5 px-3 font-mono font-semibold">4.6 : 1</td>
                 <td className="py-2.5 px-3">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#FAF5EE] text-[#435DC9]">
                     WCAG AA
                   </span>
                 </td>
@@ -430,7 +430,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                 <td className="py-2.5 px-3 font-mono text-[11px]">#201D19 (Espresso)</td>
                 <td className="py-2.5 px-3 font-mono font-semibold">14.2 : 1</td>
                 <td className="py-2.5 px-3">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#FAF5EE] text-[#435DC9]">
                     WCAG AAA
                   </span>
                 </td>
@@ -444,7 +444,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                 <td className="py-2.5 px-3 font-mono text-[11px]">#201D19 (Espresso)</td>
                 <td className="py-2.5 px-3 font-mono font-semibold">5.8 : 1</td>
                 <td className="py-2.5 px-3">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#FAF5EE] text-[#435DC9]">
                     WCAG AA
                   </span>
                 </td>
@@ -458,7 +458,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                 <td className="py-2.5 px-3 font-mono text-[11px]">#F5EDE2 (Parchment)</td>
                 <td className="py-2.5 px-3 font-mono font-semibold">5.3 : 1</td>
                 <td className="py-2.5 px-3">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#FAF5EE] text-[#435DC9]">
                     WCAG AA
                   </span>
                 </td>
@@ -472,7 +472,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                 <td className="py-2.5 px-3 font-mono text-[11px]">#F5EDE2 (Parchment)</td>
                 <td className="py-2.5 px-3 font-mono font-semibold">5.4 : 1</td>
                 <td className="py-2.5 px-3">
-                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                  <span className="px-1.5 py-0.5 rounded text-[10px] font-semibold bg-[#FAF5EE] text-[#435DC9]">
                     WCAG AA
                   </span>
                 </td>
@@ -486,10 +486,10 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
       {/* Section 4: Master Token Dictionary with One-Click Copy */}
       <section className="space-y-6 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="flex items-baseline justify-between">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#7E7870]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             04. Master Token Dictionary
           </h2>
-          <span className="text-xs text-[#7E7870] font-mono">Click swatch to copy</span>
+          <span className="text-xs text-text-secondary font-mono">Click swatch to copy</span>
         </div>
 
         <div className="space-y-6">
@@ -530,11 +530,11 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
                         {token.hex}
                       </span>
                       {copiedToken === token.name ? (
-                        <span className="text-[10px] text-emerald-800 font-semibold inline-flex items-center gap-0.5">
+                        <span className="text-[10px] text-[#435DC9] font-semibold inline-flex items-center gap-0.5">
                           <Check className="w-3 h-3" /> Copied
                         </span>
                       ) : (
-                        <span className="text-[10px] text-[#7E7870] opacity-0 group-hover:opacity-100 transition-opacity">
+                        <span className="text-[10px] text-text-secondary opacity-0 group-hover:opacity-100 transition-opacity">
                           Copy Hex
                         </span>
                       )}
@@ -549,7 +549,7 @@ export const BrandPage: React.FC<BrandPageProps> = ({ onNavigate }) => {
 
       {/* Section 5: Brand Rules & Portability */}
       <section className="space-y-4 border-t border-[#292621]/10 pt-8 sm:pt-10">
-        <h2 className="text-xs uppercase font-semibold tracking-wider text-[#7E7870]">
+        <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
           05. Multi-Project Portability & Guidelines
         </h2>
 

@@ -152,13 +152,13 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       <div className="flex items-center justify-between">
         <button
           onClick={() => onNavigate('home')}
-          className="inline-flex items-center gap-1.5 text-xs text-[#827D75] hover:text-[#292621] active:text-[#7790ED] transition-colors group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7790ED] rounded px-2 py-2 -ml-2 min-h-[44px]"
+          className="inline-flex items-center gap-1.5 text-xs text-text-secondary hover:text-[#292621] active:text-[#435DC9] transition-colors group focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7790ED] rounded px-2 py-2 -ml-2 min-h-[44px]"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" />
           <span>Back to Work</span>
         </button>
 
-        <span className="text-[11px] font-mono text-[#827D75]">
+        <span className="text-[11px] font-mono text-text-secondary">
           Case Study · {caseStudy.timeline}
         </span>
       </div>
@@ -166,19 +166,19 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       {/* Section 1: Title, Subtitle, & Metadata Header */}
       <header className="space-y-5">
         <div className="space-y-2.5">
-          <div className="case-study-hero-item flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-[#827D75]">
+          <div className="case-study-hero-item flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-text-secondary">
             <span className="font-semibold text-[#292621]">{caseStudy.clientOrOrg}</span>
             <span aria-hidden="true">·</span>
             <span className="font-mono">{caseStudy.platform}</span>
             <span aria-hidden="true">·</span>
-            <span className="text-emerald-800 font-medium">{caseStudy.status}</span>
+            <span className="text-[#435DC9] font-medium">{caseStudy.status}</span>
           </div>
 
           <h1 className="case-study-hero-item text-2xl sm:text-4xl font-semibold tracking-tight text-[#292621] leading-tight text-balance">
             {caseStudy.title}
           </h1>
 
-          <p className="case-study-hero-item text-sm sm:text-base text-[#827D75] leading-relaxed max-w-[620px]">
+          <p className="case-study-hero-item text-sm sm:text-base text-text-secondary leading-relaxed max-w-[620px]">
             {caseStudy.subtitle}
           </p>
         </div>
@@ -186,25 +186,25 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
         {/* Structured Metadata Grid (2 cols on mobile, 4 cols on desktop) */}
         <div className="case-study-hero-item grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 py-4 border-y border-[#292621]/10 text-xs">
           <div className="space-y-0.5">
-            <span className="text-[#827D75] block text-[11px] flex items-center gap-1">
+            <span className="text-text-secondary block text-[11px] flex items-center gap-1">
               <User className="w-3 h-3 text-[#292621]" /> Role
             </span>
             <span className="font-medium text-[#292621]">{caseStudy.role}</span>
           </div>
           <div className="space-y-0.5">
-            <span className="text-[#827D75] block text-[11px] flex items-center gap-1">
+            <span className="text-text-secondary block text-[11px] flex items-center gap-1">
               <Users className="w-3 h-3 text-[#292621]" /> Team
             </span>
             <span className="text-[#292621] leading-tight">{caseStudy.collaborators}</span>
           </div>
           <div className="space-y-0.5">
-            <span className="text-[#827D75] block text-[11px] flex items-center gap-1">
+            <span className="text-text-secondary block text-[11px] flex items-center gap-1">
               <Clock className="w-3 h-3 text-[#292621]" /> Timeline
             </span>
             <span className="font-mono text-[#292621]">{caseStudy.timeline}</span>
           </div>
           <div className="space-y-0.5">
-            <span className="text-[#827D75] block text-[11px] flex items-center gap-1">
+            <span className="text-text-secondary block text-[11px] flex items-center gap-1">
               <DeviceMobile className="w-3 h-3 text-[#292621]" /> Platform
             </span>
             <span className="text-[#292621]">{caseStudy.platform}</span>
@@ -223,14 +223,14 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
             loading="eager"
           />
         </div>
-        <p className="text-[11px] sm:text-xs text-[#827D75] italic px-1 text-center sm:text-left leading-normal">
+        <p className="text-[11px] sm:text-xs text-text-secondary italic px-1 text-center sm:text-left leading-normal">
           {caseStudy.heroCaption}
         </p>
       </div>
 
       {/* Architectural Document Index - Compact Jump Section */}
       <div className="p-2 sm:p-2.5 rounded-xl bg-[#EAE1D5]/60 border border-[#292621]/12 space-y-1.5">
-        <div className="flex items-center justify-between text-[11px] font-mono text-[#7E7870] px-0.5">
+        <div className="flex items-center justify-between text-[11px] font-mono text-text-secondary px-0.5">
           <span className="flex items-center gap-1.5 text-[#292621] font-medium">
             <Compass className="w-3.5 h-3.5 text-[#435DC9]" />
           </span>
@@ -241,49 +241,49 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
             onClick={() => scrollToSection('section-context')}
             className="px-2.5 py-1.5 rounded-md text-xs font-medium text-[#292621] bg-[#F5EDE2] border border-[#292621]/12 hover:bg-[#292621] hover:text-[#F5EDE2] active:bg-[#435DC9] active:text-[#F5EDE2] transition-colors min-h-[36px] flex items-center gap-1.5"
           >
-            <span className="text-[10px] font-mono text-[#7E7870]">01</span>
+            <span className="text-[10px] font-mono text-text-secondary">01</span>
             <span>Context</span>
           </button>
           <button
             onClick={() => scrollToSection('section-requirements')}
             className="px-2.5 py-1.5 rounded-md text-xs font-medium text-[#292621] bg-[#F5EDE2] border border-[#292621]/12 hover:bg-[#292621] hover:text-[#F5EDE2] active:bg-[#435DC9] active:text-[#F5EDE2] transition-colors min-h-[36px] flex items-center gap-1.5"
           >
-            <span className="text-[10px] font-mono text-[#7E7870]">02</span>
+            <span className="text-[10px] font-mono text-text-secondary">02</span>
             <span>Goals</span>
           </button>
           <button
             onClick={() => scrollToSection('section-architecture')}
             className="px-2.5 py-1.5 rounded-md text-xs font-medium text-[#292621] bg-[#F5EDE2] border border-[#292621]/12 hover:bg-[#292621] hover:text-[#F5EDE2] active:bg-[#435DC9] active:text-[#F5EDE2] transition-colors min-h-[36px] flex items-center gap-1.5"
           >
-            <span className="text-[10px] font-mono text-[#7E7870]">03</span>
+            <span className="text-[10px] font-mono text-text-secondary">03</span>
             <span>User Flows</span>
           </button>
           <button
             onClick={() => scrollToSection('section-decisions')}
             className="px-2.5 py-1.5 rounded-md text-xs font-medium text-[#292621] bg-[#F5EDE2] border border-[#292621]/12 hover:bg-[#292621] hover:text-[#F5EDE2] active:bg-[#435DC9] active:text-[#F5EDE2] transition-colors min-h-[36px] flex items-center gap-1.5"
           >
-            <span className="text-[10px] font-mono text-[#7E7870]">04</span>
+            <span className="text-[10px] font-mono text-text-secondary">04</span>
             <span>Decisions</span>
           </button>
           <button
             onClick={() => scrollToSection('section-tech')}
             className="px-2.5 py-1.5 rounded-md text-xs font-medium text-[#292621] bg-[#F5EDE2] border border-[#292621]/12 hover:bg-[#292621] hover:text-[#F5EDE2] active:bg-[#435DC9] active:text-[#F5EDE2] transition-colors min-h-[36px] flex items-center gap-1.5"
           >
-            <span className="text-[10px] font-mono text-[#7E7870]">05</span>
+            <span className="text-[10px] font-mono text-text-secondary">05</span>
             <span>Tech Stack</span>
           </button>
           <button
             onClick={() => scrollToSection('section-challenges')}
             className="px-2.5 py-1.5 rounded-md text-xs font-medium text-[#292621] bg-[#F5EDE2] border border-[#292621]/12 hover:bg-[#292621] hover:text-[#F5EDE2] active:bg-[#435DC9] active:text-[#F5EDE2] transition-colors min-h-[36px] flex items-center gap-1.5"
           >
-            <span className="text-[10px] font-mono text-[#7E7870]">06</span>
+            <span className="text-[10px] font-mono text-text-secondary">06</span>
             <span>Challenges</span>
           </button>
           <button
             onClick={() => scrollToSection('section-outcomes')}
             className="px-2.5 py-1.5 rounded-md text-xs font-medium text-[#292621] bg-[#F5EDE2] border border-[#292621]/12 hover:bg-[#292621] hover:text-[#F5EDE2] active:bg-[#435DC9] active:text-[#F5EDE2] transition-colors min-h-[36px] flex items-center gap-1.5"
           >
-            <span className="text-[10px] font-mono text-[#7E7870]">07</span>
+            <span className="text-[10px] font-mono text-text-secondary">07</span>
             <span>Outcomes</span>
           </button>
         </div>
@@ -291,7 +291,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
 
       {/* Section 2: Project Overview */}
       <section className="case-study-section space-y-3 sm:space-y-4">
-        <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+        <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
           01. Project Overview
         </h2>
         <p className="text-sm sm:text-base text-[#292621] leading-relaxed font-normal">
@@ -302,7 +302,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       {/* Section 3: Context and The Problem */}
       <section id="section-context" className="case-study-section space-y-4 sm:space-y-5 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="space-y-1.5">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             02. Context & The Problem
           </h2>
           <p className="text-sm sm:text-base font-medium text-[#292621] leading-snug">
@@ -310,7 +310,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
           </p>
         </div>
 
-        <div className="space-y-3 text-xs sm:text-sm text-[#827D75] leading-relaxed">
+        <div className="space-y-3 text-xs sm:text-sm text-text-secondary leading-relaxed">
           {caseStudy.contextAndProblem.paragraphs.map((p, idx) => (
             <p key={idx}>{p}</p>
           ))}
@@ -323,7 +323,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
           <ul className="space-y-1.5 text-xs text-[#292621]/90">
             {caseStudy.contextAndProblem.operationalNeeds.map((need, idx) => (
               <li key={idx} className="flex items-start gap-2">
-                <span className="font-mono text-[#827D75] mt-0.5">·</span>
+                <span className="font-mono text-text-secondary mt-0.5">·</span>
                 <span className="leading-snug">{need}</span>
               </li>
             ))}
@@ -334,7 +334,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       {/* Section 4: Goals & Discovery Research */}
       <section id="section-requirements" className="case-study-section space-y-5 sm:space-y-6 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="space-y-1.5">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             03. Goals & Discovery
           </h2>
           <p className="text-sm sm:text-base font-medium text-[#292621]">
@@ -347,7 +347,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
             <h3 className="font-semibold text-[#292621] text-xs uppercase tracking-wider">
               Functional Requirements
             </h3>
-            <ul className="space-y-1.5 text-xs text-[#827D75]">
+            <ul className="space-y-1.5 text-xs text-text-secondary">
               {caseStudy.goalsAndRequirements.functionalRequirements.map((req, idx) => (
                 <li key={idx} className="flex items-start gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-[#7790ED] shrink-0 mt-0.5" weight="fill" />
@@ -361,10 +361,10 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
             <h3 className="font-semibold text-[#292621] text-xs uppercase tracking-wider">
               Operational Constraints
             </h3>
-            <ul className="space-y-1.5 text-xs text-[#827D75]">
+            <ul className="space-y-1.5 text-xs text-text-secondary">
               {caseStudy.goalsAndRequirements.constraints.map((c, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-[#827D75] font-mono mt-0.5">·</span>
+                  <span className="text-text-secondary font-mono mt-0.5">·</span>
                   <span className="leading-snug">{c}</span>
                 </li>
               ))}
@@ -376,15 +376,15 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
         <div className="p-4 rounded-lg border border-[#292621]/10 space-y-2.5">
           <div className="flex items-center justify-between">
             <span className="text-xs font-semibold text-[#292621]">Discovery Evidence & In-Field Audit</span>
-            <span className="text-[11px] font-mono text-[#827D75]">Field Findings</span>
+            <span className="text-[11px] font-mono text-text-secondary">Field Findings</span>
           </div>
-          <p className="text-xs text-[#827D75] italic">
+          <p className="text-xs text-text-secondary italic">
             Methodology: {caseStudy.discoveryAndResearch.method}
           </p>
           <ul className="space-y-1.5 text-xs text-[#292621]/90">
             {caseStudy.discoveryAndResearch.findings.map((f, idx) => (
               <li key={idx} className="flex items-start gap-2">
-                <span className="text-[#7790ED] font-mono text-xs">→</span>
+                <span className="text-[#435DC9] font-mono text-xs">→</span>
                 <span className="leading-snug">{f}</span>
               </li>
             ))}
@@ -397,14 +397,14 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-8 items-start">
           {/* Pinned Left Narrative Rail on Desktop */}
           <div className="sm:col-span-5 sm:sticky sm:top-24 sm:self-start space-y-2">
-            <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+            <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
               04. User Journeys & Flow Architecture
             </h2>
-            <p className="text-xs sm:text-sm text-[#827D75] leading-relaxed">
+            <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
               {caseStudy.informationArchitecture.description}
             </p>
             <div className="hidden sm:block pt-2">
-              <span className="text-[10px] font-mono text-[#827D75] uppercase tracking-wider block">
+              <span className="text-[10px] font-mono text-text-secondary uppercase tracking-wider block">
                 Scroll to review {caseStudy.informationArchitecture.flows.length} stages ↓
               </span>
             </div>
@@ -419,9 +419,9 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
               >
                 <div className="flex items-center justify-between">
                   <span className="font-semibold text-xs text-[#292621] block">{flow.stage}</span>
-                  <span className="text-[10px] font-mono text-[#827D75]">0{idx + 1}</span>
+                  <span className="text-[10px] font-mono text-text-secondary">0{idx + 1}</span>
                 </div>
-                <p className="text-xs text-[#827D75]">
+                <p className="text-xs text-text-secondary">
                   <strong className="text-[#292621] font-medium">User Action:</strong> {flow.action}
                 </p>
                 <p className="text-xs text-[#292621]/90">
@@ -438,13 +438,13 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
         <div className="grid grid-cols-1 sm:grid-cols-12 gap-5 sm:gap-8 items-start">
           {/* Pinned Left Strategic Rationale Rail */}
           <div className="sm:col-span-5 sm:sticky sm:top-24 sm:self-start space-y-2">
-            <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+            <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
               05. Key Design Decisions
             </h2>
-            <p className="text-xs text-[#827D75] leading-relaxed">
+            <p className="text-xs text-text-secondary leading-relaxed">
               Three pivotal architectural decisions, evaluated against real-world operational friction.
             </p>
-            <div className="hidden sm:block pt-1 text-[11px] font-mono text-[#827D75] space-y-1">
+            <div className="hidden sm:block pt-1 text-[11px] font-mono text-text-secondary space-y-1">
               <div>· Zero-latency sync</div>
               <div>· High-density typography</div>
               <div>· Direct hardware bridging</div>
@@ -461,12 +461,12 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
 
                 <div className="grid grid-cols-1 gap-2.5 text-xs pt-0.5">
                   <div className="p-2.5 rounded bg-[#EAE1D5]/30 border border-[#292621]/6">
-                    <span className="text-[#827D75] block font-mono text-[10px] mb-0.5 uppercase tracking-wide">The Friction</span>
+                    <span className="text-text-secondary block font-mono text-[10px] mb-0.5 uppercase tracking-wide">The Friction</span>
                     <p className="text-[#292621] leading-relaxed">{decision.problem}</p>
                   </div>
                   <div className="p-2.5 rounded bg-[#EAE1D5]/30 border border-[#292621]/6">
-                    <span className="text-[#827D75] block font-mono text-[10px] mb-0.5 uppercase tracking-wide">Alternatives Considered</span>
-                    <p className="text-[#827D75] leading-relaxed">{decision.alternativesConsidered}</p>
+                    <span className="text-text-secondary block font-mono text-[10px] mb-0.5 uppercase tracking-wide">Alternatives Considered</span>
+                    <p className="text-text-secondary leading-relaxed">{decision.alternativesConsidered}</p>
                   </div>
                 </div>
 
@@ -477,9 +477,9 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
                   </div>
                   <div>
                     <span className="font-semibold text-[#292621] block mb-0.5">Operational Rationale:</span>
-                    <p className="text-[#827D75] leading-relaxed">{decision.rationale}</p>
+                    <p className="text-text-secondary leading-relaxed">{decision.rationale}</p>
                   </div>
-                  <div className="p-2.5 rounded bg-[#EAE1D5]/50 text-[#827D75] text-[11px] border border-[#292621]/6">
+                  <div className="p-2.5 rounded bg-[#EAE1D5]/50 text-text-secondary text-[11px] border border-[#292621]/6">
                     <strong className="text-[#292621]">Incurred Trade-off:</strong> {decision.tradeOffs}
                   </div>
                 </div>
@@ -492,10 +492,10 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       {/* Section 7: Visual Design System */}
       <section className="case-study-section space-y-4 sm:space-y-5 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="space-y-1.5">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             06. Visual System & Ergonomics
           </h2>
-          <p className="text-xs sm:text-sm text-[#827D75] leading-relaxed">
+          <p className="text-xs sm:text-sm text-text-secondary leading-relaxed">
             {caseStudy.visualDesignSystem.description}
           </p>
         </div>
@@ -512,15 +512,15 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
               <div className="space-y-0.5">
                 <div className="flex items-baseline gap-2">
                   <span className="font-semibold text-[#292621]">{token.label}</span>
-                  <span className="font-mono text-[10px] text-[#827D75]">{token.value}</span>
+                  <span className="font-mono text-[10px] text-text-secondary">{token.value}</span>
                 </div>
-                <p className="text-[11px] text-[#827D75] leading-tight">{token.usage}</p>
+                <p className="text-[11px] text-text-secondary leading-tight">{token.usage}</p>
               </div>
             </div>
           ))}
         </div>
 
-        <div className="text-xs text-[#827D75] p-3 rounded bg-[#EAE1D5]/40 border border-[#292621]/8 leading-relaxed">
+        <div className="text-xs text-text-secondary p-3 rounded bg-[#EAE1D5]/40 border border-[#292621]/8 leading-relaxed">
           <strong className="text-[#292621]">Accessibility Discipline:</strong> {caseStudy.visualDesignSystem.accessibilityNotes}
         </div>
       </section>
@@ -528,7 +528,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       {/* Section 8: Technical Implementation */}
       <section id="section-tech" className="case-study-section space-y-4 sm:space-y-5 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="space-y-1.5">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             07. Technical Architecture & Data Flow
           </h2>
           <p className="text-xs sm:text-sm text-[#292621] leading-relaxed font-medium">
@@ -540,16 +540,16 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
           {caseStudy.technicalImplementation.stackDetails.map((item, idx) => (
             <div key={idx} className="p-3.5 sm:p-4 rounded-lg bg-[#EAE1D5]/30 border border-[#292621]/10 space-y-1">
               <span className="font-semibold text-[#292621] block">{item.title}</span>
-              <p className="text-xs text-[#827D75] leading-relaxed">{item.detail}</p>
+              <p className="text-xs text-text-secondary leading-relaxed">{item.detail}</p>
             </div>
           ))}
         </div>
 
         <div className="space-y-2 pt-2">
-          <span className="text-xs font-semibold uppercase tracking-wider text-[#827D75]">
+          <span className="text-xs font-semibold uppercase tracking-wider text-text-secondary">
             Engineering Challenges Solved in Code
           </span>
-          <ul className="space-y-2 text-xs text-[#827D75]">
+          <ul className="space-y-2 text-xs text-text-secondary">
             {caseStudy.technicalImplementation.implementationChallenges.map((ch, idx) => (
               <li key={idx} className="flex items-start gap-2">
                 <Code className="w-3.5 h-3.5 text-[#292621] shrink-0 mt-0.5" />
@@ -563,10 +563,10 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       {/* Section 9: Final Solution Visual Tour */}
       <section className="case-study-section space-y-6 sm:space-y-8 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="space-y-1">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             08. Shipped Workflows & Solution Tour
           </h2>
-          <p className="text-xs text-[#827D75]">
+          <p className="text-xs text-text-secondary">
             Verified screens and operating states in production.
           </p>
         </div>
@@ -586,11 +586,11 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
 
               <div className="space-y-1.5 px-0.5">
                 <h3 className="text-sm font-semibold text-[#292621]">{sol.title}</h3>
-                <p className="text-xs text-[#827D75] leading-relaxed">{sol.caption}</p>
+                <p className="text-xs text-text-secondary leading-relaxed">{sol.caption}</p>
                 <ul className="space-y-1 text-xs text-[#292621]/90 pt-1">
                   {sol.bulletPoints.map((bp, bIdx) => (
                     <li key={bIdx} className="flex items-start gap-2">
-                      <span className="text-[#7790ED] font-mono text-xs">·</span>
+                      <span className="text-[#435DC9] font-mono text-xs">·</span>
                       <span className="leading-snug">{bp}</span>
                     </li>
                   ))}
@@ -604,10 +604,10 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       {/* Section 10: Difficulties, Compromises, & Trade-offs (Deepened) */}
       <section id="section-challenges" className="case-study-section space-y-4 sm:space-y-5 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="space-y-1">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             09. Real Challenges, Friction, & Pragmatic Trade-offs
           </h2>
-          <p className="text-xs text-[#827D75]">
+          <p className="text-xs text-text-secondary">
             Transparent documentation of obstacles encountered in the field and how technical constraints were negotiated.
           </p>
         </div>
@@ -619,7 +619,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
                 {idx + 1}. {ct.challenge}
               </span>
               <div className="text-xs space-y-1">
-                <p className="text-[#827D75] leading-relaxed">
+                <p className="text-text-secondary leading-relaxed">
                   <strong className="text-[#292621] font-medium">Incurred Compromise:</strong> {ct.compromise}
                 </p>
                 <p className="text-[#292621]/90 leading-relaxed">
@@ -634,10 +634,10 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       {/* Section 11: Outcomes & Validation (Deepened) */}
       <section id="section-outcomes" className="case-study-section space-y-5 sm:space-y-6 border-t border-[#292621]/10 pt-8 sm:pt-10">
         <div className="space-y-1">
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             10. Delivery, Verified Impact, & Honest Limits
           </h2>
-          <p className="text-xs text-[#827D75]">
+          <p className="text-xs text-text-secondary">
             Evidence-based accounting of deliverables, verified metrics, and explicit unmeasured areas.
           </p>
         </div>
@@ -647,7 +647,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
             <h3 className="font-semibold text-[#292621] text-xs uppercase tracking-wider">
               Delivered Artifacts
             </h3>
-            <ul className="space-y-1.5 text-xs text-[#827D75]">
+            <ul className="space-y-1.5 text-xs text-text-secondary">
               {caseStudy.outcomesAndValidation.delivered.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2">
                   <CheckCircle className="w-3.5 h-3.5 text-[#7790ED] shrink-0 mt-0.5" weight="fill" />
@@ -664,7 +664,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
             <ul className="space-y-1.5 text-xs text-[#292621]">
               {caseStudy.outcomesAndValidation.verifiedResults.map((item, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-[#7790ED] font-mono text-xs">→</span>
+                  <span className="text-[#435DC9] font-mono text-xs">→</span>
                   <span className="leading-snug">{item}</span>
                 </li>
               ))}
@@ -674,10 +674,10 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
 
         {/* Unmeasured Aspects Callout */}
         <div className="p-3.5 sm:p-4 rounded-lg bg-[#EAE1D5]/50 border border-[#292621]/10 space-y-1.5">
-          <span className="text-xs font-semibold text-[#827D75] uppercase tracking-wider block">
+          <span className="text-xs font-semibold text-text-secondary uppercase tracking-wider block">
             What Remains Explicitly Unmeasured
           </span>
-          <ul className="space-y-1 text-xs text-[#827D75]">
+          <ul className="space-y-1 text-xs text-text-secondary">
             {caseStudy.outcomesAndValidation.unmeasuredAspects.map((unm, idx) => (
               <li key={idx} className="flex items-start gap-2">
                 <span className="font-mono text-xs mt-0.5">·</span>
@@ -690,11 +690,11 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
 
       {/* Section 12: Reflection & What I Would Build Next */}
       <section className="case-study-section space-y-4 sm:space-y-5 border-t border-[#292621]/10 pt-8 sm:pt-10">
-        <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+        <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
           11. Retrospective & What's Next
         </h2>
 
-        <div className="space-y-4 text-xs sm:text-sm text-[#827D75] leading-relaxed">
+        <div className="space-y-4 text-xs sm:text-sm text-text-secondary leading-relaxed">
           <div>
             <span className="font-semibold text-[#292621] block mb-1">Key Engineering & Product Lessons</span>
             <ul className="space-y-1.5">
@@ -712,7 +712,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
             <ul className="space-y-1.5">
               {caseStudy.reflectionAndNextSteps.plannedRoadmap.map((rdm, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <span className="text-[#7790ED] font-mono text-xs mt-0.5">→</span>
+                  <span className="text-[#435DC9] font-mono text-xs mt-0.5">→</span>
                   <span className="leading-snug">{rdm}</span>
                 </li>
               ))}
@@ -725,7 +725,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
       <div className="border-t border-[#292621]/10 pt-8 sm:pt-12 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
         <button
           onClick={() => onNavigate('home')}
-          className="inline-flex items-center justify-center gap-1.5 text-xs text-[#827D75] hover:text-[#292621] active:text-[#7790ED] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7790ED] rounded py-2 px-3 border border-[#292621]/10 sm:border-transparent min-h-[44px]"
+          className="inline-flex items-center justify-center gap-1.5 text-xs text-text-secondary hover:text-[#292621] active:text-[#435DC9] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7790ED] rounded py-2 px-3 border border-[#292621]/10 sm:border-transparent min-h-[44px]"
         >
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>All Case Studies</span>
@@ -734,7 +734,7 @@ export const CaseStudyPage: React.FC<CaseStudyPageProps> = ({ slug, onNavigate }
         {nextProject && (
           <button
             onClick={() => onNavigate('case-study', nextProject.slug)}
-            className="inline-flex items-center justify-center gap-2 text-xs text-[#292621] font-semibold hover:text-[#7790ED] active:scale-[0.98] transition-all p-3 rounded-lg border border-[#292621]/15 hover:border-[#7790ED]/40 bg-[#F5EDE2] min-h-[44px]"
+            className="inline-flex items-center justify-center gap-2 text-xs text-[#292621] font-semibold hover:text-[#435DC9] active:scale-[0.98] transition-all p-3 rounded-lg border border-[#292621]/15 hover:border-[#7790ED]/40 bg-[#F5EDE2] min-h-[44px]"
           >
             <span>Next Case Study: {nextProject.title}</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />

@@ -1,4 +1,7 @@
 import { Project, CaseStudyData, ExperienceItem, InterfaceScreen } from '../types';
+import hibbullahProjectImage from '../assets/images/project_hibbullah_1792701879945.jpg';
+import viyroProjectImage from '../assets/images/project_viyro_1792701880596.jpg';
+import digitalPathwaysProjectImage from '../assets/images/project_digitalpathways_1792701880656.jpg';
 
 export const PERSONAL_INFO = {
   name: "A. Mahin",
@@ -33,7 +36,7 @@ export const PROJECTS: Project[] = [
     year: "2024",
     category: "HealthTech & Operations",
     summary: "An operational web dashboard and Android companion application built for retail pharmacy inventory, multi-batch expiry alerts, and prescription order fulfillment.",
-    image: "/src/assets/images/project_hibbullah_1792701879945.jpg",
+    image: hibbullahProjectImage,
     imageAlt: "Hibbullah Pharmacy Web and Mobile Interface",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Supabase", "Android"],
     caseStudyAvailable: true
@@ -47,7 +50,7 @@ export const PROJECTS: Project[] = [
     year: "2024",
     category: "Mobile & Operations",
     summary: "A focused workflow system covering the complete lifecycle: Customer → Job → Quote → Invoice → Payment, designed for mobile technicians on the move.",
-    image: "/src/assets/images/project_viyro_1792701880596.jpg",
+    image: viyroProjectImage,
     imageAlt: "Viyro Field Service Management Platform",
     technologies: ["Expo / React Native", "TypeScript", "Supabase", "EAS Build"],
     caseStudyAvailable: true
@@ -61,7 +64,7 @@ export const PROJECTS: Project[] = [
     year: "2023",
     category: "EdTech & Web",
     summary: "A streamlined digital skills roadmap application designed to help learners navigate foundational technical curricula, track progress, and access curated guides.",
-    image: "/src/assets/images/project_digitalpathways_1792701880656.jpg",
+    image: digitalPathwaysProjectImage,
     imageAlt: "DigitalPathways Learning Platform UI",
     technologies: ["React", "TypeScript", "Tailwind CSS", "Vite"],
     caseStudyAvailable: true
@@ -80,7 +83,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
     timeline: "4 Months · Discovery, Development, & Live Deployment",
     status: "Shipped & Active in Daily Operation",
     platform: "Web (Desktop Counter Terminal) + Android Companion APK (Mobile Floor Scanner)",
-    heroImage: "/src/assets/images/project_hibbullah_1792701879945.jpg",
+    heroImage: hibbullahProjectImage,
     heroCaption: "Hibbullah Pharmacy dual-terminal layout: Desktop counter POS workstation (left) and Android floor scanner companion (right) synchronized via Supabase real-time channels.",
     technologies: ["React 19", "TypeScript", "Tailwind CSS v4", "Supabase (PostgreSQL + RLS)", "Android APK", "Web Barcode API"],
 
@@ -213,7 +216,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
       {
         title: "1. Rapid Search & FIFO Dispense Terminal",
         caption: "Pharmacists can locate medicines by brand or generic compound in under 150ms, with the oldest batch pre-selected by default.",
-        image: "/src/assets/images/project_hibbullah_1792701879945.jpg",
+        image: hibbullahProjectImage,
         bulletPoints: [
           "Keyboard-first navigation: entire checkout completed without touching a mouse.",
           "Instant visibility of generic alternatives when requested brand is out of stock.",
@@ -223,7 +226,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
       {
         title: "2. Batch Expiry Horizon Dashboard",
         caption: "Proactive tracking categorizing inventory into 30, 60, and 90-day expiry windows, preventing dead inventory losses.",
-        image: "/src/assets/images/project_hibbullah_1792701879945.jpg",
+        image: hibbullahProjectImage,
         bulletPoints: [
           "Visual threshold breakdown with estimated monetary value at risk.",
           "One-click distributor credit return report generation.",
@@ -293,7 +296,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
     timeline: "6 Months · Core Pipeline Shipped, Ongoing Beta Testing",
     status: "Private Field Beta",
     platform: "Cross-Platform Mobile (iOS & Android via Expo / React Native) + Responsive Web Dispatch",
-    heroImage: "/src/assets/images/project_viyro_1792701880596.jpg",
+    heroImage: viyroProjectImage,
     heroCaption: "Viyro contractor pipeline: Mobile technician dispatch, real-time quote generation, and digital payment collection interface.",
     technologies: ["Expo SDK 51", "React Native", "TypeScript", "Supabase", "PostgreSQL", "EAS Build", "Tailwind (NativeWind)"],
 
@@ -431,7 +434,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
       {
         title: "1. 5-Stage Contractor Dispatch Pipeline",
         caption: "Live dashboard tracking active jobs through Quote, Approved, Scheduled, In Progress, Invoiced, and Paid.",
-        image: "/src/assets/images/project_viyro_1792701880596.jpg",
+        image: viyroProjectImage,
         bulletPoints: [
           "Color-coded visual pipeline with instant monetary totals per stage.",
           "Technician schedule calendar with one-tap route mapping.",
@@ -441,7 +444,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
       {
         title: "2. Mobile Signature & Instant Checkout",
         caption: "Technicians collect customer signatures on-site and dispatch instant payment links before packing up their tools.",
-        image: "/src/assets/images/project_viyro_1792701880596.jpg",
+        image: viyroProjectImage,
         bulletPoints: [
           "Smooth vector signature capture with timestamped client legal consent.",
           "Direct Stripe / Apple Pay checkout links sent via SMS in one tap.",
@@ -511,7 +514,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
     timeline: "3 Months · Launched & Open-Sourced",
     status: "Active Public Web Platform",
     platform: "Modern Responsive Web Application (Desktop, Tablet, Mobile)",
-    heroImage: "/src/assets/images/project_digitalpathways_1792701880656.jpg",
+    heroImage: digitalPathwaysProjectImage,
     heroCaption: "DigitalPathways learning dashboard: Interactive skill roadmaps, curated career modules, progress checklist, and resource library.",
     technologies: ["React 19", "TypeScript", "Tailwind CSS v4", "Vite", "IndexedDB / LocalStorage", "Markdown Parser"],
 
@@ -643,7 +646,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
       {
         title: "1. Interactive Roadmap Canvas",
         caption: "Visual prerequisite trees showing clear progression paths from basic concepts to production-grade applications.",
-        image: "/src/assets/images/project_digitalpathways_1792701880656.jpg",
+        image: digitalPathwaysProjectImage,
         bulletPoints: [
           "Non-linear zoomable path display with clear step-by-step milestones.",
           "Difficulty rating and estimated completion timeframe for each module.",
@@ -653,7 +656,7 @@ export const CASE_STUDIES: Record<string, CaseStudyData> = {
       {
         title: "2. Focused Module & Resource Library",
         caption: "Curated learning modules paired with practical building prompts and zero commercial fluff.",
-        image: "/src/assets/images/project_digitalpathways_1792701880656.jpg",
+        image: digitalPathwaysProjectImage,
         bulletPoints: [
           "Direct links to official documentation and free interactive environments.",
           "Practical real-world project specifications for portfolio creation.",
@@ -720,7 +723,7 @@ export const INTERFACE_SCREENS: InterfaceScreen[] = [
     project: "Hibbullah Pharmacy",
     aspect: "16:9",
     description: "Batch-level expiry tracking table with automated threshold indicators.",
-    image: "/src/assets/images/project_hibbullah_1792701879945.jpg"
+    image: hibbullahProjectImage
   },
   {
     id: "screen-2",
@@ -728,7 +731,7 @@ export const INTERFACE_SCREENS: InterfaceScreen[] = [
     project: "Viyro Field Service",
     aspect: "16:9",
     description: "5-stage contractor service flow from incoming quote to final checkout.",
-    image: "/src/assets/images/project_viyro_1792701880596.jpg"
+    image: viyroProjectImage
   },
   {
     id: "screen-3",
@@ -736,7 +739,7 @@ export const INTERFACE_SCREENS: InterfaceScreen[] = [
     project: "DigitalPathways",
     aspect: "16:9",
     description: "Interactive learning milestones and curated resource library.",
-    image: "/src/assets/images/project_digitalpathways_1792701880656.jpg"
+    image: digitalPathwaysProjectImage
   }
 ];
 

@@ -12,7 +12,8 @@ export const CustomCursor: React.FC = () => {
   useEffect(() => {
     // Disable on touch devices or if cursor is not available
     const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    if (isTouchDevice || !cursorRef.current) return;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (isTouchDevice || prefersReducedMotion || !cursorRef.current) return;
 
     const cursor = cursorRef.current;
     
@@ -49,6 +50,7 @@ export const CustomCursor: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', handleMouseEnter);
+      gsap.killTweensOf(cursor);
     };
   }, []);
 

@@ -8,7 +8,10 @@ export const InterfaceGallery: React.FC = () => {
   const scroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
       const scrollAmount = direction === 'left' ? -300 : 300;
-      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        ? 'instant'
+        : 'smooth';
+      scrollContainerRef.current.scrollBy({ left: scrollAmount, behavior });
     }
   };
 
@@ -17,10 +20,10 @@ export const InterfaceGallery: React.FC = () => {
       {/* Header with clean label and touch-friendly buttons */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-[#827D75]">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
             Selected Interfaces
           </h2>
-          <p className="text-xs text-[#827D75] mt-0.5">
+          <p className="text-xs text-text-secondary mt-0.5">
             Real product screens, workflows, and state views.
           </p>
         </div>
@@ -67,9 +70,9 @@ export const InterfaceGallery: React.FC = () => {
             <div className="space-y-0.5 px-0.5">
               <div className="flex items-baseline justify-between text-xs">
                 <span className="font-medium text-[#292621] truncate">{screen.title}</span>
-                <span className="text-[#827D75] text-[11px] shrink-0 ml-2">{screen.project}</span>
+                <span className="text-text-secondary text-[11px] shrink-0 ml-2">{screen.project}</span>
               </div>
-              <p className="text-[11px] text-[#827D75] leading-relaxed line-clamp-2">
+              <p className="text-[11px] text-text-secondary leading-relaxed line-clamp-2">
                 {screen.description}
               </p>
             </div>

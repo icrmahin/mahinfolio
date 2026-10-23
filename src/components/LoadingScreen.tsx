@@ -30,9 +30,13 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       },
     });
 
+    let lineTween: gsap.core.Tween | undefined;
+    let titleTween: gsap.core.Tween | undefined;
+    let exitTimeline: gsap.core.Timeline | undefined;
+
     // Animate line progress
     if (lineRef.current) {
-      gsap.to(lineRef.current, {
+      lineTween = gsap.to(lineRef.current, {
         scaleX: 1,
         duration: 1.1,
         ease: 'power2.inOut',
@@ -41,7 +45,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
     // Entrance animation of text
     if (titleRef.current) {
-      gsap.fromTo(
+      titleTween = gsap.fromTo(
         titleRef.current,
         { opacity: 0, y: 15 },
         { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }
@@ -50,13 +54,13 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
     // Exit transition sequence
     const timer = setTimeout(() => {
-      const tl = gsap.timeline({
+      exitTimeline = gsap.timeline({
         onComplete: () => {
           onComplete();
         },
       });
 
-      tl.to([titleRef.current, counterRef.current, lineRef.current], {
+      exitTimeline.to([titleRef.current, counterRef.current, lineRef.current], {
         opacity: 0,
         y: -10,
         duration: 0.35,
@@ -75,6 +79,9 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
 
     return () => {
       counterTween.kill();
+      lineTween?.revert();
+      titleTween?.revert();
+      exitTimeline?.kill();
       clearTimeout(timer);
     };
   }, [onComplete]);
@@ -86,7 +93,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       style={{ willChange: 'transform' }}
     >
       {/* Top Header Label */}
-      <div className="flex items-center justify-between text-[11px] font-mono text-[#7E7870] uppercase tracking-widest">
+      <div className="flex items-center justify-between text-[11px] font-mono text-text-secondary uppercase tracking-widest">
         <span>Portfolio & Systems</span>
         <span>A. Mahin</span>
       </div>
@@ -94,14 +101,14 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       {/* Center Wordmark & Subtitle */}
       <div className="max-w-[640px] w-full mx-auto space-y-3">
         <div className="overflow-hidden">
-          <h1
+          <p
             ref={titleRef}
             className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#292621]"
           >
             icrmahin
-          </h1>
+          </p>
         </div>
-        <p className="text-xs sm:text-sm font-mono text-[#7E7870]">
+        <p className="text-xs sm:text-sm font-mono text-text-secondary">
           Product Engineer & AI Systems Architect
         </p>
         
@@ -118,7 +125,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       {/* Bottom Counter */}
       <div
         ref={counterRef}
-        className="flex items-center justify-between text-xs font-mono text-[#7E7870]"
+        className="flex items-center justify-between text-xs font-mono text-text-secondary"
       >
         <span>INITIALIZING INTERFACE</span>
         <span className="tabular-nums text-[#292621] font-semibold">

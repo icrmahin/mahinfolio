@@ -77,7 +77,27 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
     openRef.current = next;
     setOpen(next);
 
-    if (next) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      menuTlRef.current?.progress(next ? 1 : 0).pause();
+      iconTlRef.current?.progress(next ? 1 : 0).pause();
+      gsap.set(menuRef.current, { autoAlpha: next ? 1 : 0, y: next ? 0 : -8 });
+      gsap.set("[data-menu-item]", {
+        autoAlpha: next ? 1 : 0,
+        y: next ? 0 : 6,
+      });
+      gsap.set(topLineRef.current, {
+        y: next ? 5 : 0,
+        rotate: next ? 45 : 0,
+      });
+      gsap.set(bottomLineRef.current, {
+        y: next ? -5 : 0,
+        rotate: next ? -45 : 0,
+      });
+      gsap.set(midLineRef.current, {
+        autoAlpha: next ? 0 : 1,
+        scaleX: next ? 0 : 1,
+      });
+    } else if (next) {
       menuTlRef.current?.play();
       iconTlRef.current?.play();
     } else {
@@ -178,12 +198,12 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
       ref={rootRef}
       className={`sticky top-0 z-50 w-full border-b transition-colors duration-300 ${headerSurface}`}
     >
-      <div className="relative mx-auto flex h-16 max-w-xl items-center justify-between px-5 md:px-0">
+      <div className="relative mx-auto flex h-16 max-w-[640px] items-center justify-between px-4 sm:px-6">
         <button
           type="button"
           onClick={() => handleNavigate("home")}
           aria-label="Go to homepage"
-          className="rounded-md text-[15px] font-medium tracking-tight text-[#292621] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED] -ml-2"
+          className="rounded-md text-sm font-medium tracking-tight text-[#292621] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED] -ml-2"
         >
           icrmahin
         </button>
@@ -248,15 +268,15 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
           <span className="relative block size-5">
             <span
               ref={topLineRef}
-              className="absolute left-0 top-[4px] h-[1.5px] w-5 rounded-full bg-[#292621]"
+              className="absolute left-0 top-[4px] h-0.5 w-5 rounded-full bg-[#292621]"
             />
             <span
               ref={midLineRef}
-              className="absolute left-0 top-[9px] h-[1.5px] w-5 rounded-full bg-[#292621]"
+              className="absolute left-0 top-[9px] h-0.5 w-5 rounded-full bg-[#292621]"
             />
             <span
               ref={bottomLineRef}
-              className="absolute left-0 top-[14px] h-[1.5px] w-5 rounded-full bg-[#292621]"
+              className="absolute left-0 top-[14px] h-0.5 w-5 rounded-full bg-[#292621]"
             />
           </span>
         </button>
@@ -265,11 +285,12 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
       <div
         ref={menuRef}
         id="navbar-menu"
-        className="absolute inset-x-0 top-full border-b border-[#EAE1D5] bg-[#FAF5EE] lg:hidden"
+        aria-hidden={!open}
+        className="navbar-menu absolute inset-x-0 top-full border-b border-[#EAE1D5] bg-[#FAF5EE] lg:hidden"
       >
         <nav
           aria-label="Mobile navigation"
-          className="mx-auto flex max-w-2xl flex-col px-5 py-3"
+          className="mx-auto flex max-w-[640px] flex-col px-4 py-3 sm:px-6"
         >
           {navLinks.map((link) => {
             const isActive = currentView === link.view;
@@ -281,7 +302,7 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
                 data-menu-item
                 onClick={() => handleNavigate(link.view)}
                 aria-current={isActive ? "page" : undefined}
-                className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-left text-[15px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED] ${
+                className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED] ${
                   isActive
                     ? "text-[#435DC9]"
                     : "text-[#666159] hover:text-[#292621]"
@@ -304,7 +325,7 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
             type="button"
             data-menu-item
             onClick={handleResume}
-            className="w-full rounded-lg px-2 py-3 text-left text-[15px] font-medium text-[#292621] transition-colors hover:text-[#435DC9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED]"
+            className="w-full rounded-lg px-2 py-3 text-left text-sm font-medium text-[#292621] transition-colors hover:text-[#435DC9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED]"
           >
             Download resume
           </button>

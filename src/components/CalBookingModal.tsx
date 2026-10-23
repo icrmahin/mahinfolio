@@ -50,7 +50,7 @@ export const CalBookingModal: React.FC<CalBookingModalProps> = ({ isOpen, onClos
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded text-[#827D75] hover:text-[#292621] hover:bg-[#292621]/5 transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center -mr-1"
+            className="p-2 rounded text-text-secondary hover:text-[#292621] hover:bg-[#292621]/5 transition-colors min-w-[40px] min-h-[40px] flex items-center justify-center -mr-1"
             aria-label="Close booking modal"
           >
             <X className="w-5 h-5" />
@@ -60,13 +60,13 @@ export const CalBookingModal: React.FC<CalBookingModalProps> = ({ isOpen, onClos
         <div className="overflow-y-auto p-4 sm:p-8 space-y-5 sm:space-y-6">
           <div>
             <h3 className="text-lg font-medium text-[#292621]">Let's discuss your product</h3>
-            <p className="text-xs text-[#827D75] mt-1 leading-relaxed">
+            <p className="text-xs text-text-secondary mt-1 leading-relaxed">
               I collaborate with early-stage founders, design teams, and businesses to build dependable web & mobile applications.
             </p>
           </div>
 
           <div className="p-4 rounded-lg bg-[#EAE1D5]/50 border border-[#292621]/10 space-y-3">
-            <div className="flex items-center gap-2 text-xs text-[#827D75]">
+            <div className="flex items-center gap-2 text-xs text-text-secondary">
               <Clock className="w-4 h-4 text-[#292621]" />
               <span>30-minute introductory call via Google Meet</span>
             </div>
@@ -85,13 +85,13 @@ export const CalBookingModal: React.FC<CalBookingModalProps> = ({ isOpen, onClos
           </div>
 
           <div className="space-y-2">
-            <span className="text-xs text-[#827D75] block">Prefer direct asynchronous communication?</span>
+            <span className="text-xs text-text-secondary block">Prefer direct asynchronous communication?</span>
             <div className="flex items-center gap-2">
               <a
                 href={`mailto:${PERSONAL_INFO.email}`}
                 className="flex-1 inline-flex items-center gap-2 px-3 py-2 rounded border border-[#292621]/15 text-xs text-[#292621] hover:border-[#7790ED]/50 transition-colors"
               >
-                <EnvelopeSimple className="w-3.5 h-3.5 text-[#827D75]" />
+                <EnvelopeSimple className="w-3.5 h-3.5 text-text-secondary" />
                 <span className="truncate">{PERSONAL_INFO.email}</span>
               </a>
               <button
@@ -99,7 +99,7 @@ export const CalBookingModal: React.FC<CalBookingModalProps> = ({ isOpen, onClos
                 className="px-3 py-2 rounded border border-[#292621]/15 text-xs text-[#292621] hover:bg-[#EAE1D5] transition-colors shrink-0"
               >
                 {copied ? (
-                  <span className="inline-flex items-center gap-1 text-emerald-800 font-medium">
+                  <span className="inline-flex items-center gap-1 text-[#435DC9] font-medium">
                     <Check className="w-3 h-3" /> Copied
                   </span>
                 ) : (
@@ -113,7 +113,7 @@ export const CalBookingModal: React.FC<CalBookingModalProps> = ({ isOpen, onClos
         <div className="px-6 py-3 border-t border-[#292621]/10 bg-[#EAE1D5]/30 text-right">
           <button
             onClick={onClose}
-            className="text-xs text-[#827D75] hover:text-[#292621] transition-colors"
+            className="text-xs text-text-secondary hover:text-[#292621] transition-colors"
           >
             Close
           </button>

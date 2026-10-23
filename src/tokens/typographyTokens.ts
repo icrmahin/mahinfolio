@@ -18,8 +18,8 @@ export interface TypographyToken {
 export const typographyTokens = {
   // Brand Typeface Families
   families: {
-    // Primary Brand Family (Set upon approval: Albert Sans / Sora / Be Vietnam Pro)
-    brandPrimary: 'var(--font-brand-primary, "Albert Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif)',
+    // Primary brand family
+    brandPrimary: 'var(--font-brand-primary, "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif)',
     // Technical / Monospace Family (JetBrains Mono for metrics, micro-labels, code)
     brandTechnical: 'var(--font-brand-mono, "JetBrains Mono", monospace)',
   },

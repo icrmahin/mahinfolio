@@ -125,7 +125,7 @@ export default function App() {
     ).matches;
     if (prefersReducedMotion || !mainRef.current) return;
 
-    gsap.fromTo(
+    const tween = gsap.fromTo(
       mainRef.current,
       { opacity: 0, y: 12 },
       {
@@ -136,6 +136,10 @@ export default function App() {
         clearProps: "transform",
       },
     );
+
+    return () => {
+      tween.revert();
+    };
   }, [currentView, currentSlug]);
 
   const handleNavigate = (view: string, slug?: string) => {
@@ -247,7 +251,7 @@ export default function App() {
             <h1 className="text-2xl font-semibold text-[#292621]">
               Page Not Found
             </h1>
-            <p className="text-xs sm:text-sm text-[#827D75]">
+            <p className="text-xs sm:text-sm text-text-secondary">
               The project or page you requested does not exist or has been
               archived.
             </p>
