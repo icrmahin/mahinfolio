@@ -15,7 +15,6 @@ import { ArchivePage } from "./pages/ArchivePage";
 import { CaseStudyPage } from "./pages/CaseStudyPage";
 import { ContactPage } from "./pages/ContactPage";
 import { BrandPage } from "./pages/BrandPage";
-import { ResumeModal } from "./components/ResumeModal";
 import { CalBookingModal } from "./components/CalBookingModal";
 import { CustomCursor } from "./components/CustomCursor";
 import { LoadingScreen } from "./components/LoadingScreen";
@@ -36,12 +35,22 @@ export default function App() {
     | "not-found"
   >("home");
   const [currentSlug, setCurrentSlug] = useState<string>("hibbullah-pharmacy");
-  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
   const mainRef = useRef<HTMLElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
+
+  // Direct PDF resume download - no modal, no UI interruption
+  const handleResume = () => {
+    const pdfUrl = "/resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "A.Mahin-Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   // Advanced Smooth Inertial Scrolling with Lenis synchronized with GSAP ScrollTrigger
   useEffect(() => {
@@ -177,7 +186,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F5EDE2] text-[#292621] flex flex-col selection:bg-[#7790ED]/20 selection:text-[#292621] relative">
+    <div className="min-h-screen bg-page text-text flex flex-col selection:bg-accent/20 selection:text-text relative">
       {/* Loading Screen */}
       {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
 
@@ -196,7 +205,7 @@ export default function App() {
 
       {/* Custom Horizontal Scroll Indicator Line (Award-winning subtle scroll bar) */}
       <div
-        className="fixed top-0 left-0 h-[2px] bg-[#292621] z-50 transition-all duration-75 origin-left pointer-events-none"
+        className="fixed top-0 left-0 h-[2px] bg-text z-50 transition-all duration-75 origin-left pointer-events-none"
         style={{ width: `${scrollProgress}%` }}
         aria-hidden="true"
       />
@@ -215,7 +224,7 @@ export default function App() {
         {currentView === "home" && (
           <HomePage
             onNavigate={handleNavigate}
-            onOpenResume={() => setIsResumeOpen(true)}
+            onOpenResume={handleResume}
             onOpenBooking={() => setIsBookingOpen(true)}
           />
         )}
@@ -223,7 +232,7 @@ export default function App() {
         {currentView === "about" && (
           <AboutPage
             onNavigate={handleNavigate}
-            onOpenResume={() => setIsResumeOpen(true)}
+            onOpenResume={handleResume}
             onOpenBooking={() => setIsBookingOpen(true)}
           />
         )}
@@ -240,7 +249,7 @@ export default function App() {
           <ContactPage
             onNavigate={handleNavigate}
             onOpenBooking={() => setIsBookingOpen(true)}
-            onOpenResume={() => setIsResumeOpen(true)}
+            onOpenResume={handleResume}
           />
         )}
 
@@ -248,17 +257,17 @@ export default function App() {
 
         {currentView === "not-found" && (
           <div className="py-20 text-center space-y-4">
-            <h1 className="text-2xl font-semibold text-[#292621]">
+            <h1 className="text-2xl font-semibold text-text">
               Page Not Found
             </h1>
-            <p className="text-xs sm:text-sm text-text-secondary">
+            <p className="text-xs sm:text-sm text-text-muted">
               The project or page you requested does not exist or has been
               archived.
             </p>
             <div className="pt-2">
               <button
                 onClick={() => handleNavigate("home")}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-[#292621] text-[#F5EDE2] text-xs font-medium hover:bg-[#292621]/90 min-h-[44px]"
+                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-text text-page text-xs font-medium hover:bg-text/90 min-h-[44px]"
               >
                 <ArrowLeft className="w-3.5 h-3.5" />
                 <span>Return to Selected Work</span>
@@ -267,12 +276,6 @@ export default function App() {
           </div>
         )}
       </main>
-
-      {/* Interactive Resume Modal */}
-      <ResumeModal
-        isOpen={isResumeOpen}
-        onClose={() => setIsResumeOpen(false)}
-      />
 
       {/* Cal.com Booking Modal */}
       <CalBookingModal

@@ -1,56 +1,55 @@
 @import "tailwindcss";
 
+/*
+  Single source of truth for colors.
+  Light values are declared in @theme below (Tailwind v4 emits them onto :root) and
+  are overridden for dark via :root[data-theme="dark"]. The @theme mapping makes these
+  the ONLY colors available to Tailwind utilities and disables the default palette.
+*/
+:root {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-page: #14191b;
+  --color-surface: #1c2326;
+  --color-border: #2e383c;
+  --color-border-control: #5d6b70;
+  --color-text: #e9eeef;
+  --color-text-muted: #9aa8ac;
+  --color-accent: #6fbfb8;
+  --color-accent-hover: #8fd3cd;
+  --color-accent-soft: #1e3436;
+  --color-accent-foreground: #14191b;
+  --color-focus: #6fbfb8;
+}
+
 @theme {
+  /* Remove Tailwind's default color palette entirely */
+  --color-*: initial;
+
   --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* Foundations */
-  --color-dark: #292621;
-  --color-dark-canvas: #201D19;
-  --color-light: #F5EDE2;
-  --color-light-elevated: #FAF5EE;
-
-  /* Surfaces */
-  --color-soft: #EAE1D5;
-  --color-surface-muted: #DFD4C6;
-  --color-surface-dark: #292621;
-  --color-surface-dark-muted: #35312B;
-
-  /* Typography */
-  --color-text-primary: #292621;
-  --color-text-secondary: #666159;
-  --color-muted: #7E7870;
-  --color-text-subtle: #9E978D;
-
-  /* Accents */
-  --color-accent: #7790ED;
-  --color-accent-strong: #435DC9;
-  --color-accent-hover: #647EDD;
-  --color-clay: #C48248;
-  --color-clay-dark: #E09F67;
-
-  /* Semantic Statuses */
-  --color-status-success: #2A7347;
-  --color-status-warning: #9A5B15;
-  --color-status-error: #B3392F;
-  --color-status-info: #435DC9;
-}
-
-:root {
-  --color-bg-primary: #F5EDE2;
-  --color-surface-soft: #EAE1D5;
-  --color-text-primary: #292621;
-  --color-text-secondary: #666159;
-  --color-text-muted: #7E7870;
-  --color-accent: #7790ED;
-  --color-accent-strong: #435DC9;
-  --color-border: rgba(41, 38, 33, 0.10);
+  /* Foundations (emitted onto :root as the light-theme variable values) */
+  --color-page: #f7f6f3;
+  --color-surface: #ffffff;
+  --color-border: #e3e1dc;
+  --color-border-control: #8c9699;
+  --color-text: #1f2a2e;
+  --color-text-muted: #5c6b70;
+  --color-accent: #2a7570;
+  --color-accent-hover: #1f5f5b;
+  --color-accent-soft: #e3f0ee;
+  --color-accent-foreground: #ffffff;
+  --color-focus: #2a7570;
 }
 
 body {
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  background-color: #F5EDE2;
-  color: #292621;
+  background-color: var(--color-page);
+  color: var(--color-text);
 }
 
 .navbar-menu {
@@ -58,7 +57,7 @@ body {
 }
 
 :focus-visible {
-  outline: 2px solid #435DC9;
+  outline: 2px solid var(--color-focus);
   outline-offset: 3px;
 }
 
@@ -89,19 +88,19 @@ body {
   height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5EDE2;
+  background: var(--color-page);
 }
 ::-webkit-scrollbar-thumb {
-  background: #292621;
+  background: var(--color-text);
   border-radius: 9999px;
-  border: 1.5px solid #F5EDE2;
+  border: 1.5px solid var(--color-page);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #435DC9;
+  background: var(--color-focus);
 }
 * {
   scrollbar-width: thin;
-  scrollbar-color: #292621 #F5EDE2;
+  scrollbar-color: var(--color-text) var(--color-page);
 }
 
 /* Custom scrollbar for horizontal gallery */
@@ -119,8 +118,8 @@ body {
     display: none !important;
   }
   body {
-    background-color: #ffffff !important;
-    color: #000000 !important;
+    background-color: var(--color-surface) !important;
+    color: var(--color-text) !important;
   }
   main {
     max-width: 100% !important;

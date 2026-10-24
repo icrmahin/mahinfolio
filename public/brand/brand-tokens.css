@@ -1,103 +1,42 @@
 /**
  * @license
- * icrmahin Signature Brand Color System - Universal CSS Custom Properties
- * Version: 1.0.0
+ * icrmahin Signature Brand Color System — Universal CSS Custom Properties
+ * Version: 2.0.0
  * Author: A. Mahin (icrmahin@gmail.com)
  *
  * Include this stylesheet in any project:
  * <link rel="stylesheet" href="/brand/brand-tokens.css">
+ *
+ * Light values are defined on :root; dark values on :root[data-theme="dark"].
+ * These are the same eleven tokens used by src/index.css.
  */
 
 :root {
-  /* Foundations & Surfaces (Light Theme Default) */
-  --color-bg-primary: #F5EDE2;
-  --color-bg-elevated: #FAF5EE;
-  --color-surface-soft: #EAE1D5;
-  --color-surface-muted: #DFD4C6;
-  --color-surface-hover: #DFD4C6;
-
-  /* Typography */
-  --color-text-primary: #292621;
-  --color-text-secondary: #666159;
-  --color-text-muted: #7E7870;
-  --color-text-subtle: #9E978D;
-
-  /* Signature Accent (Periwinkle) */
-  --color-accent: #7790ED;
-  --color-accent-strong: #435DC9;
-  --color-accent-hover: #647EDD;
-  --color-accent-active: #526DCF;
-  --color-accent-wash: rgba(119, 144, 237, 0.12);
-  --color-focus-ring: #7790ED;
-
-  /* Supporting Accent */
-  --color-accent-supporting: #C48248;
-  --color-accent-supporting-wash: rgba(196, 130, 72, 0.12);
-
-  /* Borders & Dividers */
-  --color-border: rgba(41, 38, 33, 0.10);
-  --color-border-strong: rgba(41, 38, 33, 0.20);
-
-  /* Semantic Status Tokens (Light) */
-  --color-status-success: #2A7347;
-  --color-status-success-wash: rgba(42, 115, 71, 0.10);
-  --color-status-warning: #9A5B15;
-  --color-status-warning-wash: rgba(154, 91, 21, 0.10);
-  --color-status-error: #B3392F;
-  --color-status-error-wash: rgba(179, 57, 47, 0.10);
-  --color-status-info: #435DC9;
-  --color-status-info-wash: rgba(67, 93, 201, 0.10);
-
-  /* Code / Syntax Tokens */
-  --syntax-bg: #201D19;
-  --syntax-fg: #F5EDE2;
-  --syntax-comment: #9E978D;
-  --syntax-keyword: #7790ED;
-  --syntax-string: #65C189;
-  --syntax-function: #E09F67;
-  --syntax-variable: #F5EDE2;
-  --syntax-type: #435DC9;
+  color-scheme: light;
+  --color-page: #f7f6f3;
+  --color-surface: #ffffff;
+  --color-border: #e3e1dc;
+  --color-border-control: #8c9699;
+  --color-text: #1f2a2e;
+  --color-text-muted: #5c6b70;
+  --color-accent: #2a7570;
+  --color-accent-hover: #1f5f5b;
+  --color-accent-soft: #e3f0ee;
+  --color-accent-foreground: #ffffff;
+  --color-focus: #2a7570;
 }
 
-/* Dark Theme Variant */
-[data-theme="dark"],
-.dark {
-  /* Foundations & Surfaces (Dark Theme) */
-  --color-bg-primary: #201D19;
-  --color-bg-elevated: #292621;
-  --color-surface-soft: #292621;
-  --color-surface-muted: #35312B;
-  --color-surface-hover: #423D36;
-
-  /* Typography */
-  --color-text-primary: #F5EDE2;
-  --color-text-secondary: #C2BBB0;
-  --color-text-muted: #9E978D;
-  --color-text-subtle: #706B62;
-
-  /* Signature Accent */
-  --color-accent: #7790ED;
-  --color-accent-strong: #7790ED;
-  --color-accent-hover: #8EA4F0;
-  --color-accent-active: #647EDD;
-  --color-accent-wash: rgba(119, 144, 237, 0.20);
-  --color-focus-ring: #7790ED;
-
-  /* Supporting Accent */
-  --color-accent-supporting: #E09F67;
-  --color-accent-supporting-wash: rgba(224, 159, 103, 0.15);
-
-  /* Borders & Dividers */
-  --color-border: rgba(245, 237, 226, 0.12);
-  --color-border-strong: rgba(245, 237, 226, 0.22);
-
-  /* Semantic Status Tokens (Dark) */
-  --color-status-success: #65C189;
-  --color-status-success-wash: rgba(101, 193, 137, 0.18);
-  --color-status-warning: #E8A34E;
-  --color-status-warning-wash: rgba(232, 163, 78, 0.18);
-  --color-status-error: #F06C62;
-  --color-status-error-wash: rgba(240, 108, 98, 0.18);
-  --color-status-info: #7790ED;
-  --color-status-info-wash: rgba(119, 144, 237, 0.18);
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-page: #14191b;
+  --color-surface: #1c2326;
+  --color-border: #2e383c;
+  --color-border-control: #5d6b70;
+  --color-text: #e9eeef;
+  --color-text-muted: #9aa8ac;
+  --color-accent: #6fbfb8;
+  --color-accent-hover: #8fd3cd;
+  --color-accent-soft: #1e3436;
+  --color-accent-foreground: #14191b;
+  --color-focus: #6fbfb8;
 }

@@ -1,361 +1,200 @@
 /**
- * @license
- * A. Mahin (icrmahin) Signature Brand Color System
- * Canonical Token Definition & Design System Specification
+ * icrmahin Brand Color System — token documentation data.
+ *
+ * This file mirrors the single source of truth: `src/index.css` (the `--color-*`
+ * custom properties) plus the dark overrides in `:root[data-theme="dark"]`.
+ * It carries no color values of its own; rendering references the CSS variables
+ * directly via `var(--color-...)` so the page always reflects the live tokens.
  */
 
-export interface ColorToken {
+export interface BrandToken {
+  /** Human-facing token name. */
   name: string;
+  /** CSS custom property, e.g. --color-page (light + dark variants). */
   variable: string;
-  hex: string;
-  rgba?: string;
+  /** Canonical Tailwind utility, e.g. bg-page. */
+  utility: string;
+  /** What the token is for. */
   role: string;
-  intendedUsage: string;
-  wcagContrastLight?: number; // against #F5EDE2
-  wcagContrastDark?: number;  // against #201D19
-  wcagRating?: 'AAA' | 'AA' | 'AA Large' | 'UI Component' | 'Subtle';
 }
 
-export interface ColorFamily {
+export interface TokenFamily {
   title: string;
   description: string;
-  tokens: ColorToken[];
+  tokens: BrandToken[];
 }
 
-export const BRAND_PALETTE = {
-  // Foundation Neutrals (Light & Dark)
-  foundations: {
-    light: '#F5EDE2',       // Warm parchment / alabaster
-    lightElevated: '#FAF5EE', // Subtle card highlight
-    dark: '#201D19',        // Deep espresso charcoal (background)
-    darkElevated: '#292621', // Primary dark surface
-  },
-
-  // Surfaces & Layers
-  surfaces: {
-    lightSoft: '#EAE1D5',   // Sand surface contrast
-    lightMuted: '#DFD4C6',  // Hover / active surface
-    darkSoft: '#292621',    // Dark elevated card surface
-    darkMuted: '#35312B',   // Dark secondary surface
-    darkHover: '#423D36',   // Dark hover state
-  },
-
-  // Typography
-  typography: {
-    primaryLight: '#292621',     // High contrast dark text on light
-    secondaryLight: '#666159',   // Refined secondary text (WCAG AA compliant: 5.4:1)
-    mutedLight: '#7E7870',       // Muted metadata & labels (3.7:1)
-    subtleLight: '#9E978D',      // Subtle / disabled text (2.4:1)
-    primaryDark: '#F5EDE2',      // High contrast light text on dark (14.2:1)
-    secondaryDark: '#C2BBB0',    // Secondary text on dark (8.5:1)
-    mutedDark: '#9E978D',        // Muted text on dark (5.1:1)
-    subtleDark: '#706B62',       // Subtle text on dark (3.2:1)
-  },
-
-  // Signature Accent (Periwinkle Blue)
-  accent: {
-    core: '#7790ED',             // The signature visual periwinkle
-    textLight: '#435DC9',        // Contrast-safe accent for text links on light bg (4.6:1)
-    hover: '#647EDD',            // Interactive hover state
-    active: '#526DCF',           // Interactive pressed state
-    tintLight: 'rgba(119, 144, 237, 0.12)', // Subtle surface wash on light
-    tintDark: 'rgba(119, 144, 237, 0.20)',  // Subtle surface wash on dark
-  },
-
-  // Supporting Accent (Warm Earth Clay)
-  supporting: {
-    clayLight: '#C48248',        // Warm ochre / terracotta highlight on light
-    clayDark: '#E09F67',         // Warm amber highlight on dark
-    clayTint: 'rgba(196, 130, 72, 0.12)',
-  },
-
-  // Borders & Structure
-  borders: {
-    light: 'rgba(41, 38, 33, 0.10)',
-    lightStrong: 'rgba(41, 38, 33, 0.20)',
-    dark: 'rgba(245, 237, 226, 0.12)',
-    darkStrong: 'rgba(245, 237, 226, 0.22)',
-  },
-
-  // Semantic Status Tokens (Eye-comfortable & distinctive)
-  semantic: {
-    success: {
-      light: '#2A7347',
-      dark: '#65C189',
-      tintLight: 'rgba(42, 115, 71, 0.10)',
-      tintDark: 'rgba(101, 193, 137, 0.18)',
-    },
-    warning: {
-      light: '#9A5B15',
-      dark: '#E8A34E',
-      tintLight: 'rgba(154, 91, 21, 0.10)',
-      tintDark: 'rgba(232, 163, 78, 0.18)',
-    },
-    error: {
-      light: '#B3392F',
-      dark: '#F06C62',
-      tintLight: 'rgba(179, 57, 47, 0.10)',
-      tintDark: 'rgba(240, 108, 98, 0.18)',
-    },
-    info: {
-      light: '#435DC9',
-      dark: '#7790ED',
-      tintLight: 'rgba(67, 93, 201, 0.10)',
-      tintDark: 'rgba(119, 144, 237, 0.18)',
-    }
-  }
-};
-
-export const COLOR_FAMILIES: ColorFamily[] = [
+export const COLOR_FAMILIES: TokenFamily[] = [
   {
-    title: "1. Foundation & Surfaces",
-    description: "Backgrounds and structural layers calibrated for prolonged reading comfort without eye strain.",
+    title: "1. Foundations & Surfaces",
+    description:
+      "Canvas and elevated layers. Structure comes from spacing and hairlines, not boxes.",
     tokens: [
       {
-        name: "Light Background (Parchment)",
-        variable: "--color-bg-light",
-        hex: "#F5EDE2",
-        role: "Primary background for light interfaces",
-        intendedUsage: "Main viewport background, body canvas. Replaces sterile #FFFFFF.",
-        wcagContrastDark: 14.2,
-        wcagRating: "AAA"
+        name: "Page Canvas",
+        variable: "--color-page",
+        utility: "bg-page",
+        role: "Primary viewport background for every page.",
       },
       {
-        name: "Light Soft Surface",
-        variable: "--color-surface-soft",
-        hex: "#EAE1D5",
-        role: "Secondary container surface",
-        intendedUsage: "Card surfaces, input fields, gallery blocks, subtle dividers.",
-        wcagContrastDark: 11.2,
-        wcagRating: "AAA"
+        name: "Surface",
+        variable: "--color-surface",
+        utility: "bg-surface",
+        role: "Elevated cards, modals, code blocks, and image frames.",
       },
       {
-        name: "Light Muted Surface",
-        variable: "--color-surface-muted",
-        hex: "#DFD4C6",
-        role: "Elevated & hover surface",
-        intendedUsage: "Button hover backgrounds, active navigation tabs, drawer surfaces.",
-        wcagContrastDark: 9.8,
-        wcagRating: "AAA"
+        name: "Border",
+        variable: "--color-border",
+        utility: "border-border",
+        role: "Hairlines, dividers, and structural outlines (10%-opacity discipline).",
       },
       {
-        name: "Dark Canvas Foundation",
-        variable: "--color-bg-dark",
-        hex: "#201D19",
-        role: "Primary background for dark interfaces",
-        intendedUsage: "Dark-theme viewport, VS Code editor background, terminal canvas.",
-        wcagContrastLight: 14.2,
-        wcagRating: "AAA"
+        name: "Border (Controls)",
+        variable: "--color-border-control",
+        utility: "border-border-control",
+        role: "Outlines for interactive controls: buttons, inputs, pills.",
       },
-      {
-        name: "Dark Primary Surface",
-        variable: "--color-surface-dark",
-        hex: "#292621",
-        role: "Elevated dark card surface",
-        intendedUsage: "Sidebar, modal dialogue, card containers, dark header bar.",
-        wcagContrastLight: 12.6,
-        wcagRating: "AAA"
-      },
-      {
-        name: "Dark Muted Surface",
-        variable: "--color-surface-dark-muted",
-        hex: "#35312B",
-        role: "Dark secondary surface",
-        intendedUsage: "Code block backgrounds, active item in dark mode, inset containers.",
-        wcagContrastLight: 10.1,
-        wcagRating: "AAA"
-      }
-    ]
+    ],
   },
   {
-    title: "2. Typography Hierarchy",
-    description: "Contrast-audited text tokens guaranteeing readability across light and dark viewports.",
+    title: "2. Typography",
+    description:
+      "Two text tones only. Hierarchy is expressed through size and weight, not extra colors.",
     tokens: [
       {
-        name: "Text Primary (Light)",
-        variable: "--color-text-primary",
-        hex: "#292621",
-        role: "Primary headings and body copy on light surfaces",
-        intendedUsage: "Page titles, h1-h4, main paragraph text, primary labels.",
-        wcagContrastLight: 12.6,
-        wcagRating: "AAA"
+        name: "Text (Primary)",
+        variable: "--color-text",
+        utility: "text-text",
+        role: "Headings, body copy, and high-contrast values.",
       },
       {
-        name: "Text Secondary (Light - Refined)",
-        variable: "--color-text-secondary",
-        hex: "#666159",
-        role: "Secondary body and explanations (WCAG AA Compliant)",
-        intendedUsage: "Supporting paragraphs, card subtitles, descriptions.",
-        wcagContrastLight: 5.4,
-        wcagRating: "AA"
-      },
-      {
-        name: "Text Muted (Light)",
+        name: "Text Muted",
         variable: "--color-text-muted",
-        hex: "#7E7870",
-        role: "Metadata, timestamps, and section headers",
-        intendedUsage: "Uppercase section titles, timestamps, breadcrumbs, tags.",
-        wcagContrastLight: 3.7,
-        wcagRating: "AA Large"
+        utility: "text-text-muted",
+        role: "Secondary copy, metadata, labels, and timestamps.",
       },
-      {
-        name: "Text Primary (Dark)",
-        variable: "--color-text-primary-dark",
-        hex: "#F5EDE2",
-        role: "Primary copy on dark surfaces",
-        intendedUsage: "Headings and body text in dark mode / VS Code code tokens.",
-        wcagContrastDark: 14.2,
-        wcagRating: "AAA"
-      },
-      {
-        name: "Text Secondary (Dark)",
-        variable: "--color-text-secondary-dark",
-        hex: "#C2BBB0",
-        role: "Secondary copy on dark surfaces",
-        intendedUsage: "Dark mode descriptions, secondary labels, parameters.",
-        wcagContrastDark: 8.5,
-        wcagRating: "AAA"
-      },
-      {
-        name: "Text Muted (Dark)",
-        variable: "--color-text-muted-dark",
-        hex: "#9E978D",
-        role: "Metadata and comments on dark surfaces",
-        intendedUsage: "Code comments, line numbers, subtle metadata.",
-        wcagContrastDark: 5.1,
-        wcagRating: "AA"
-      }
-    ]
+    ],
   },
   {
-    title: "3. Signature Accent (Periwinkle Blue)",
-    description: "The defining brand color. Used selectively to guide attention without visual fatigue.",
+    title: "3. Action & Emphasis",
+    description:
+      "One accent family. Emphasis is earned: focus, selection, and primary actions only.",
     tokens: [
       {
-        name: "Periwinkle Accent Core",
+        name: "Accent",
         variable: "--color-accent",
-        hex: "#7790ED",
-        role: "Signature visual brand accent",
-        intendedUsage: "Focus rings, active icons, progress bars, visual indicators.",
-        wcagContrastDark: 5.8,
-        wcagRating: "AA"
+        utility: "bg-accent",
+        role: "Primary actions, active indicators, and selected states.",
       },
       {
-        name: "Periwinkle Text Strong",
-        variable: "--color-accent-strong",
-        hex: "#435DC9",
-        role: "Contrast-safe text links on light background",
-        intendedUsage: "Inline hyperlinks, active text states on #F5EDE2 (4.6:1 AA).",
-        wcagContrastLight: 4.6,
-        wcagRating: "AA"
-      },
-      {
-        name: "Periwinkle Hover",
+        name: "Accent Hover",
         variable: "--color-accent-hover",
-        hex: "#647EDD",
-        role: "Accent button hover & active links",
-        intendedUsage: "Interactive hover states, active indicator lines.",
-        wcagContrastDark: 5.2,
-        wcagRating: "AA"
+        utility: "bg-accent-hover",
+        role: "Hover and pressed states of accent controls.",
       },
       {
-        name: "Periwinkle Subtle Wash",
-        variable: "--color-accent-wash",
-        hex: "#7790ED1F",
-        rgba: "rgba(119, 144, 237, 0.12)",
-        role: "Selected background and selection highlight",
-        intendedUsage: "Text selection highlight, active tab background, badge background.",
-        wcagRating: "UI Component"
-      }
-    ]
+        name: "Accent Soft",
+        variable: "--color-accent-soft",
+        utility: "bg-accent-soft",
+        role: "Tinted backgrounds: badges, selected cards, washes.",
+      },
+      {
+        name: "Accent Foreground",
+        variable: "--color-accent-foreground",
+        utility: "text-accent-foreground",
+        role: "Content sitting on top of an accent fill.",
+      },
+    ],
   },
   {
-    title: "4. Supporting Accent (Warm Earth Clay)",
-    description: "Secondary editorial accent grounding the system in warmth.",
+    title: "4. Accessibility",
+    description:
+      "Focus is its own token so keyboard affordance never depends on state colors.",
     tokens: [
       {
-        name: "Earth Clay (Light)",
-        variable: "--color-clay",
-        hex: "#C48248",
-        role: "Editorial secondary accent on light",
-        intendedUsage: "Special badge borders, warning badges, subtle callout lines.",
-        wcagContrastLight: 3.2,
-        wcagRating: "UI Component"
+        name: "Focus",
+        variable: "--color-focus",
+        utility: "ring-focus",
+        role: "Focus rings and outlines for the entire system.",
       },
-      {
-        name: "Earth Clay (Dark)",
-        variable: "--color-clay-dark",
-        hex: "#E09F67",
-        role: "Warm accent in dark mode & VS Code",
-        intendedUsage: "JSON keys, regex tokens, warm highlights in editor.",
-        wcagContrastDark: 8.1,
-        wcagRating: "AAA"
-      }
-    ]
+    ],
   },
-  {
-    title: "5. Semantic Status System",
-    description: "Consistent functional indicators designed to harmonize with the warm aesthetic.",
-    tokens: [
-      {
-        name: "Success (Forest Sage)",
-        variable: "--color-success",
-        hex: "#2A7347",
-        role: "Successful states, live badges, completed steps",
-        intendedUsage: "Live product badge, status checkmarks, diff additions.",
-        wcagContrastLight: 5.3,
-        wcagRating: "AA"
-      },
-      {
-        name: "Warning (Warm Amber)",
-        variable: "--color-warning",
-        hex: "#9A5B15",
-        role: "Cautionary notices, near-expiry alerts",
-        intendedUsage: "Warning banners, caution icons, review required badges.",
-        wcagContrastLight: 5.1,
-        wcagRating: "AA"
-      },
-      {
-        name: "Error (Terracotta Crimson)",
-        variable: "--color-error",
-        hex: "#B3392F",
-        role: "Errors, critical expiry, destructive actions",
-        intendedUsage: "Validation errors, critical expiry tags, error diagnostics.",
-        wcagContrastLight: 5.4,
-        wcagRating: "AA"
-      },
-      {
-        name: "Info (Serene Periwinkle)",
-        variable: "--color-info",
-        hex: "#435DC9",
-        role: "Informational alerts, tooltips, hints",
-        intendedUsage: "Info toasts, tip callouts, informational notices.",
-        wcagContrastLight: 4.6,
-        wcagRating: "AA"
-      }
-    ]
-  }
 ];
 
 export const BRAND_USAGE_RULES = [
   {
-    rule: "The 60-30-10 Distribution Rule",
-    detail: "60% Light Canvas (#F5EDE2 or #201D19), 30% Structural Surfaces & Typography (#292621, #EAE1D5, #666159), 10% Controlled Accent (#7790ED / #435DC9). Never flood surfaces with accent colors."
+    rule: "60-30-10 Distribution",
+    detail:
+      "Roughly 60% page canvas, 30% structural surfaces/typography via text-text-muted, and 10% accent. Never flood a surface with accent.",
   },
   {
-    rule: "Eye Comfort Over Extreme Contrast",
-    detail: "Avoid harsh pure white (#FFFFFF) and pure black (#000000). The natural warm parchment (#F5EDE2) and deep espresso (#201D19) prevent photoreceptor fatigue during extended 8+ hour screen sessions."
+    rule: "No Semantic Color Systems",
+    detail:
+      "Status is communicated with text and iconography (checkmark + label), not extra success/warning/error hues. The system defines exactly eleven tokens.",
   },
   {
-    rule: "Context-Safe Accent Text",
-    detail: "Use #435DC9 for text links and text buttons on light backgrounds to meet WCAG AA (4.6:1). Reserve #7790ED for graphical accents, focus rings, badges, and dark surfaces where it achieves 5.8:1 contrast."
+    rule: "Never Add a Color",
+    detail:
+      "If a design needs a color outside the eleven tokens, change the design or extend the token file — never hard-code hex, rgb(), hsl(), or named colors.",
   },
   {
-    rule: "Restrained Structure (Zero-Box Discipline)",
-    detail: "Prefer whitespace, typographic hierarchy, and subtle 10% opacity borders over heavily boxed, multi-nested cards or drop shadows."
+    rule: "Do Not Use Double Indicators Alone",
+    detail:
+      "Pair any accent 'Active' indicator with a label so state is never carried by color alone.",
+  },
+];
+
+/**
+ * Light-theme reference values, quoted by the /brand documentation page.
+ * Kept here (the token file) so the literals live in exactly one place.
+ */
+export const TOKEN_HEX = {
+  page: "#f7f6f3",
+  accent: "#2a7570",
+} as const;
+
+/** Contrast audit rows for the /brand page (values recomputed for the new tokens). */
+export const CONTRAST_ROWS = [
+  {
+    fg: "Text",
+    bgLabel: "Page",
+    ratioLight: "13.6 : 1",
+    ratioDark: "15.1 : 1",
+    rating: "WCAG AAA",
   },
   {
-    rule: "Dual-Indicator Accessibility",
-    detail: "Never rely on color alone to communicate state. Pair status colors with iconography or clear text labels (e.g. checkmark + 'Active', dot + 'Critical')."
-  }
+    fg: "Text Muted",
+    bgLabel: "Page",
+    ratioLight: "5.1 : 1",
+    ratioDark: "7.2 : 1",
+    rating: "WCAG AA",
+  },
+  {
+    fg: "Accent",
+    bgLabel: "Page",
+    ratioLight: "5.0 : 1",
+    ratioDark: "8.3 : 1",
+    rating: "WCAG AA",
+  },
+  {
+    fg: "Accent Hover",
+    bgLabel: "Page",
+    ratioLight: "6.8 : 1",
+    ratioDark: "10.4 : 1",
+    rating: "WCAG AA",
+  },
+  {
+    fg: "Accent",
+    bgLabel: "Accent Soft",
+    ratioLight: "4.6 : 1",
+    ratioDark: "6.1 : 1",
+    rating: "WCAG AA",
+  },
+  {
+    fg: "Accent Foreground",
+    bgLabel: "Accent",
+    ratioLight: "5.4 : 1",
+    ratioDark: "8.3 : 1",
+    rating: "WCAG AA",
+  },
 ];

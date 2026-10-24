@@ -190,8 +190,8 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
 
   const headerSurface =
     scrolled || open
-      ? "border-[#EAE1D5] bg-[#F5EDE2]"
-      : "border-transparent bg-transparent";
+      ? "border-surface bg-page"
+      : "border-page bg-page";
 
   return (
     <header
@@ -203,7 +203,7 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
           type="button"
           onClick={() => handleNavigate("home")}
           aria-label="Go to homepage"
-          className="rounded-md text-sm font-medium tracking-tight text-[#292621] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED] -ml-2"
+          className="rounded-md text-sm font-medium tracking-tight text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent -ml-2"
         >
           icrmahin
         </button>
@@ -231,8 +231,8 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
                   aria-current={isActive ? "page" : undefined}
                   className={`relative py-1 text-sm transition-colors focus-visible:outline-none ${
                     isActive
-                      ? "text-[#292621]"
-                      : "text-[#666159] hover:text-[#292621]"
+                      ? "text-text"
+                      : "text-text-muted hover:text-text"
                   }`}
                 >
                   {link.label}
@@ -243,14 +243,14 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
             <span
               ref={indicatorRef}
               aria-hidden="true"
-              className="pointer-events-none absolute -bottom-1.5 left-0 h-[2px] w-0 rounded-full bg-[#7790ED] opacity-0"
+              className="pointer-events-none absolute -bottom-1.5 left-0 h-[2px] w-0 rounded-full bg-accent opacity-0"
             />
           </nav>
 
           <button
             type="button"
             onClick={handleResume}
-            className="inline-flex items-center rounded-full border border-[#DFD4C6] px-4 py-1.5 text-sm text-[#292621] transition-colors hover:border-[#7790ED] hover:text-[#435DC9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED]"
+            className="inline-flex items-center rounded-full border border-border-control px-4 py-1.5 text-sm text-text transition-colors hover:border-accent hover:text-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             Download resume
           </button>
@@ -263,20 +263,20 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
           aria-expanded={open}
           aria-controls="navbar-menu"
           aria-label={open ? "Close menu" : "Open menu"}
-          className="relative flex size-10 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED] lg:hidden"
+          className="relative flex size-10 items-center justify-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent lg:hidden"
         >
           <span className="relative block size-5">
             <span
               ref={topLineRef}
-              className="absolute left-0 top-[4px] h-0.5 w-5 rounded-full bg-[#292621]"
+              className="absolute left-0 top-[4px] h-0.5 w-5 rounded-full bg-text"
             />
             <span
               ref={midLineRef}
-              className="absolute left-0 top-[9px] h-0.5 w-5 rounded-full bg-[#292621]"
+              className="absolute left-0 top-[9px] h-0.5 w-5 rounded-full bg-text"
             />
             <span
               ref={bottomLineRef}
-              className="absolute left-0 top-[14px] h-0.5 w-5 rounded-full bg-[#292621]"
+              className="absolute left-0 top-[14px] h-0.5 w-5 rounded-full bg-text"
             />
           </span>
         </button>
@@ -286,7 +286,7 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
         ref={menuRef}
         id="navbar-menu"
         aria-hidden={!open}
-        className="navbar-menu absolute inset-x-0 top-full border-b border-[#EAE1D5] bg-[#FAF5EE] lg:hidden"
+        className="navbar-menu absolute inset-x-0 top-full border-b border-surface bg-surface lg:hidden"
       >
         <nav
           aria-label="Mobile navigation"
@@ -302,30 +302,30 @@ export const Navbar = ({ currentView, onNavigate }: NavbarProps) => {
                 data-menu-item
                 onClick={() => handleNavigate(link.view)}
                 aria-current={isActive ? "page" : undefined}
-                className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED] ${
+                className={`flex w-full items-center justify-between rounded-lg px-2 py-3 text-left text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent ${
                   isActive
-                    ? "text-[#435DC9]"
-                    : "text-[#666159] hover:text-[#292621]"
+                    ? "text-accent-hover"
+                    : "text-text-muted hover:text-text"
                 }`}
               >
                 <span>{link.label}</span>
                 {isActive && (
                   <span
                     aria-hidden="true"
-                    className="size-1.5 rounded-full bg-[#7790ED]"
+                    className="size-1.5 rounded-full bg-accent"
                   />
                 )}
               </button>
             );
           })}
 
-          <div className="my-2 h-px bg-[#EAE1D5]" />
+          <div className="my-2 h-px bg-surface" />
 
           <button
             type="button"
             data-menu-item
             onClick={handleResume}
-            className="w-full rounded-lg px-2 py-3 text-left text-sm font-medium text-[#292621] transition-colors hover:text-[#435DC9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7790ED]"
+            className="w-full rounded-lg px-2 py-3 text-left text-sm font-medium text-text transition-colors hover:text-accent-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
           >
             Download resume
           </button>

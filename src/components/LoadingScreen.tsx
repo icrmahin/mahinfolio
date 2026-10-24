@@ -89,11 +89,11 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[99999] bg-[#F5EDE2] text-[#292621] flex flex-col justify-between p-6 sm:p-12 select-none"
+      className="fixed inset-0 z-[99999] bg-page text-text flex flex-col justify-between p-6 sm:p-12 select-none"
       style={{ willChange: 'transform' }}
     >
       {/* Top Header Label */}
-      <div className="flex items-center justify-between text-[11px] font-mono text-text-secondary uppercase tracking-widest">
+      <div className="flex items-center justify-between text-[11px] font-mono text-text-muted uppercase tracking-widest">
         <span>Portfolio & Systems</span>
         <span>A. Mahin</span>
       </div>
@@ -103,20 +103,20 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
         <div className="overflow-hidden">
           <p
             ref={titleRef}
-            className="text-3xl sm:text-5xl font-semibold tracking-tight text-[#292621]"
+            className="text-3xl sm:text-5xl font-semibold tracking-tight text-text"
           >
             icrmahin
           </p>
         </div>
-        <p className="text-xs sm:text-sm font-mono text-text-secondary">
+        <p className="text-xs sm:text-sm font-mono text-text-muted">
           Product Engineer & AI Systems Architect
         </p>
         
         {/* Minimal Progress Bar */}
-        <div className="w-full h-0.5 bg-[#292621]/10 rounded-full overflow-hidden mt-6">
+        <div className="w-full h-0.5 bg-text/10 rounded-full overflow-hidden mt-6">
           <div
             ref={lineRef}
-            className="h-full bg-[#292621] origin-left"
+            className="h-full bg-text origin-left"
             style={{ transform: 'scaleX(0)' }}
           />
         </div>
@@ -125,10 +125,10 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       {/* Bottom Counter */}
       <div
         ref={counterRef}
-        className="flex items-center justify-between text-xs font-mono text-text-secondary"
+        className="flex items-center justify-between text-xs font-mono text-text-muted"
       >
         <span>INITIALIZING INTERFACE</span>
-        <span className="tabular-nums text-[#292621] font-semibold">
+        <span className="tabular-nums text-text font-semibold">
           {progress.toString().padStart(3, '0')}%
         </span>
       </div>

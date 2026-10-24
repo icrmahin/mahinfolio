@@ -20,10 +20,10 @@ export const InterfaceGallery: React.FC = () => {
       {/* Header with clean label and touch-friendly buttons */}
       <div className="flex items-center justify-between">
         <div>
-          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-secondary">
+          <h2 className="text-xs uppercase font-semibold tracking-wider text-text-muted">
             Selected Interfaces
           </h2>
-          <p className="text-xs text-text-secondary mt-0.5">
+          <p className="text-xs text-text-muted mt-0.5">
             Real product screens, workflows, and state views.
           </p>
         </div>
@@ -31,14 +31,14 @@ export const InterfaceGallery: React.FC = () => {
         <div className="flex items-center gap-1">
           <button
             onClick={() => scroll('left')}
-            className="p-2 sm:p-1.5 rounded border border-[#292621]/15 text-[#292621] hover:bg-[#EAE1D5] active:bg-[#EAE1D5] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7790ED] min-w-[40px] min-h-[40px] flex items-center justify-center"
+            className="p-2 sm:p-1.5 rounded border border-text/15 text-text hover:bg-surface active:bg-surface transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent min-w-[40px] min-h-[40px] flex items-center justify-center"
             aria-label="Previous interface screen"
           >
             <CaretLeft className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
           </button>
           <button
             onClick={() => scroll('right')}
-            className="p-2 sm:p-1.5 rounded border border-[#292621]/15 text-[#292621] hover:bg-[#EAE1D5] active:bg-[#EAE1D5] transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#7790ED] min-w-[40px] min-h-[40px] flex items-center justify-center"
+            className="p-2 sm:p-1.5 rounded border border-text/15 text-text hover:bg-surface active:bg-surface transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent min-w-[40px] min-h-[40px] flex items-center justify-center"
             aria-label="Next interface screen"
           >
             <CaretRight className="w-4 h-4 sm:w-3.5 sm:h-3.5" />
@@ -58,7 +58,7 @@ export const InterfaceGallery: React.FC = () => {
             key={screen.id}
             className="shrink-0 w-[260px] sm:w-[380px] space-y-2 group"
           >
-            <div className="overflow-hidden rounded-xl border border-[#292621]/12 bg-[#EAE1D5]/70 shadow-xs">
+            <div className="overflow-hidden rounded-xl border border-text/12 bg-surface/70 shadow-xs">
               <img
                 src={screen.image}
                 alt={`${screen.project} - ${screen.title}`}
@@ -69,10 +69,10 @@ export const InterfaceGallery: React.FC = () => {
             </div>
             <div className="space-y-0.5 px-0.5">
               <div className="flex items-baseline justify-between text-xs">
-                <span className="font-medium text-[#292621] truncate">{screen.title}</span>
-                <span className="text-text-secondary text-[11px] shrink-0 ml-2">{screen.project}</span>
+                <span className="font-medium text-text truncate">{screen.title}</span>
+                <span className="text-text-muted text-[11px] shrink-0 ml-2">{screen.project}</span>
               </div>
-              <p className="text-[11px] text-text-secondary leading-relaxed line-clamp-2">
+              <p className="text-[11px] text-text-muted leading-relaxed line-clamp-2">
                 {screen.description}
               </p>
             </div>

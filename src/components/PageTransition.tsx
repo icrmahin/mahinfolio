@@ -55,7 +55,7 @@ export const PageTransition: React.FC<PageTransitionProps> = ({ viewKey }) => {
   return (
     <div
       ref={veilRef}
-      className="fixed inset-0 z-[90] bg-[#292621] pointer-events-none hidden"
+      className="fixed inset-0 z-[90] bg-text pointer-events-none hidden"
       style={{ willChange: 'transform' }}
       aria-hidden="true"
     />
